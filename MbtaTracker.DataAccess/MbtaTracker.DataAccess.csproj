@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MbtaTracker.DataAccess</RootNamespace>
     <AssemblyName>MbtaTracker.DataAccess</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,6 +65,7 @@
     <Compile Include="Feed_Info.cs" />
     <Compile Include="MbtaTrackerDb.cs" />
     <Compile Include="Prediction.cs" />
+    <Compile Include="PredictionsByRouteJson.cs" />
     <Compile Include="PredictionTrip.cs" />
     <Compile Include="PredictionTripStop.cs" />
     <Compile Include="PredictionTripVehicle.cs" />
@@ -76,6 +78,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <Compile Include="Prediction.LoadFromJson.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

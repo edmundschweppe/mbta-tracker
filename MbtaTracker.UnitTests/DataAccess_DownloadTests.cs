@@ -514,7 +514,7 @@ namespace MbtaTracker.UnitTests
         {
             _helper = new GtfsStaticFeedHelper
             {
-                TargetFolder = @"C:\Users\edmund\Documents\Visual Studio 2015\Projects\MbtaTracker\testdata"
+                TargetFolder = @"C:\Users\edmund\Source\Repos\MbtaTracker\testdata"
             };
         }
         #endregion Setup and teardown methods

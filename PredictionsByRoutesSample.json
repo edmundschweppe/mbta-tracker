@@ -1,0 +1,1413 @@
+{
+  "mode": [
+    {
+      "route_type": "2",
+      "mode_name": "Commuter Rail",
+      "route": [
+        {
+          "route_id": "CR-Fitchburg",
+          "route_name": "Fitchburg Line",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "30999151-CR_MAY2016-hxf16011-Weekday-01",
+                  "trip_name": "409 (11:30 am from North Station)",
+                  "trip_headsign": "Fitchburg",
+                  "vehicle": {
+                    "vehicle_id": "1636",
+                    "vehicle_lat": "42.3734703063965",
+                    "vehicle_lon": "-71.2393493652344",
+                    "vehicle_bearing": "246",
+                    "vehicle_speed": "11",
+                    "vehicle_timestamp": "1477324350"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "5",
+                      "stop_id": "Brandeis/ Roberts",
+                      "stop_name": "Brandeis/Roberts",
+                      "sch_arr_dt": "1477324440",
+                      "sch_dep_dt": "1477324440",
+                      "pre_dt": "1477324523",
+                      "pre_away": "35"
+                    },
+                    {
+                      "stop_sequence": "6",
+                      "stop_id": "Kendal Green",
+                      "stop_name": "Kendal Green",
+                      "sch_arr_dt": "1477324680",
+                      "sch_dep_dt": "1477324680",
+                      "pre_dt": "1477324706",
+                      "pre_away": "218"
+                    },
+                    {
+                      "stop_sequence": "7",
+                      "stop_id": "Lincoln",
+                      "stop_name": "Lincoln",
+                      "sch_arr_dt": "1477325040",
+                      "sch_dep_dt": "1477325040",
+                      "pre_dt": "1477324990",
+                      "pre_away": "502"
+                    },
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "Concord",
+                      "stop_name": "Concord",
+                      "sch_arr_dt": "1477325340",
+                      "sch_dep_dt": "1477325340",
+                      "pre_dt": "1477325256",
+                      "pre_away": "768"
+                    },
+                    {
+                      "stop_sequence": "9",
+                      "stop_id": "West Concord",
+                      "stop_name": "West Concord",
+                      "sch_arr_dt": "1477325580",
+                      "sch_dep_dt": "1477325580",
+                      "pre_dt": "1477325494",
+                      "pre_away": "1006"
+                    },
+                    {
+                      "stop_sequence": "10",
+                      "stop_id": "South Acton",
+                      "stop_name": "South Acton",
+                      "sch_arr_dt": "1477325820",
+                      "sch_dep_dt": "1477325820",
+                      "pre_dt": "1477325749",
+                      "pre_away": "1261"
+                    },
+                    {
+                      "stop_sequence": "11",
+                      "stop_id": "Littleton / Rte 495",
+                      "stop_name": "Littleton/Rte 495",
+                      "sch_arr_dt": "1477326240",
+                      "sch_dep_dt": "1477326240",
+                      "pre_dt": "1477326132",
+                      "pre_away": "1644"
+                    },
+                    {
+                      "stop_sequence": "12",
+                      "stop_id": "Ayer",
+                      "stop_name": "Ayer",
+                      "sch_arr_dt": "1477326720",
+                      "sch_dep_dt": "1477326720",
+                      "pre_dt": "1477326572",
+                      "pre_away": "2084"
+                    },
+                    {
+                      "stop_sequence": "13",
+                      "stop_id": "Shirley",
+                      "stop_name": "Shirley",
+                      "sch_arr_dt": "1477327020",
+                      "sch_dep_dt": "1477327020",
+                      "pre_dt": "1477326900",
+                      "pre_away": "2412"
+                    },
+                    {
+                      "stop_sequence": "14",
+                      "stop_id": "North Leominster",
+                      "stop_name": "North Leominster",
+                      "sch_arr_dt": "1477327560",
+                      "sch_dep_dt": "1477327560",
+                      "pre_dt": "1477327341",
+                      "pre_away": "2853"
+                    },
+                    {
+                      "stop_sequence": "15",
+                      "stop_id": "Fitchburg",
+                      "stop_name": "Fitchburg",
+                      "sch_arr_dt": "1477328100",
+                      "sch_dep_dt": "1477328100",
+                      "pre_dt": "1477327853",
+                      "pre_away": "3365"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "30991978-CR_MAY2016-hxf16011-Weekday-01",
+                  "trip_name": "414 (10:58 am from Fitchburg)",
+                  "trip_headsign": "North Station",
+                  "vehicle": {
+                    "vehicle_id": "1628",
+                    "vehicle_lat": "42.4042510986328",
+                    "vehicle_lon": "-71.3209075927734",
+                    "vehicle_bearing": "182",
+                    "vehicle_speed": "22",
+                    "vehicle_timestamp": "1477324371"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "10",
+                      "stop_id": "Hastings",
+                      "stop_name": "Hastings",
+                      "sch_arr_dt": "1477324200",
+                      "sch_dep_dt": "1477324200",
+                      "pre_dt": "1477324518",
+                      "pre_away": "30"
+                    },
+                    {
+                      "stop_sequence": "11",
+                      "stop_id": "Kendal Green",
+                      "stop_name": "Kendal Green",
+                      "sch_arr_dt": "1477324320",
+                      "sch_dep_dt": "1477324320",
+                      "pre_dt": "1477324616",
+                      "pre_away": "128"
+                    },
+                    {
+                      "stop_sequence": "12",
+                      "stop_id": "Brandeis/ Roberts",
+                      "stop_name": "Brandeis/Roberts",
+                      "sch_arr_dt": "1477324440",
+                      "sch_dep_dt": "1477324440",
+                      "pre_dt": "1477324755",
+                      "pre_away": "267"
+                    },
+                    {
+                      "stop_sequence": "13",
+                      "stop_id": "Waltham",
+                      "stop_name": "Waltham",
+                      "sch_arr_dt": "1477324680",
+                      "sch_dep_dt": "1477324680",
+                      "pre_dt": "1477324983",
+                      "pre_away": "495"
+                    },
+                    {
+                      "stop_sequence": "14",
+                      "stop_id": "Waverley",
+                      "stop_name": "Waverley",
+                      "sch_arr_dt": "1477324980",
+                      "sch_dep_dt": "1477324980",
+                      "pre_dt": "1477325200",
+                      "pre_away": "712"
+                    },
+                    {
+                      "stop_sequence": "15",
+                      "stop_id": "Belmont",
+                      "stop_name": "Belmont",
+                      "sch_arr_dt": "1477325100",
+                      "sch_dep_dt": "1477325100",
+                      "pre_dt": "1477325338",
+                      "pre_away": "850"
+                    },
+                    {
+                      "stop_sequence": "16",
+                      "stop_id": "Porter Square",
+                      "stop_name": "Porter Square",
+                      "sch_arr_dt": "1477325400",
+                      "sch_dep_dt": "1477325400",
+                      "pre_dt": "1477325584",
+                      "pre_away": "1096"
+                    },
+                    {
+                      "stop_sequence": "17",
+                      "stop_id": "North Station",
+                      "stop_name": "North Station",
+                      "sch_arr_dt": "1477326000",
+                      "sch_dep_dt": "1477326000",
+                      "pre_dt": "1477326221",
+                      "pre_away": "1733"
+                    }
+                  ]
+                },
+                {
+                  "trip_id": "30991979-CR_MAY2016-hxf16011-Weekday-01",
+                  "trip_name": "416 (12:08 pm from Fitchburg)",
+                  "trip_headsign": "North Station",
+                  "vehicle": {
+                    "vehicle_id": "1811",
+                    "vehicle_lat": "42.5802688598633",
+                    "vehicle_lon": "-71.791877746582",
+                    "vehicle_bearing": "144",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1477324377"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "1",
+                      "stop_id": "Fitchburg",
+                      "stop_name": "Fitchburg",
+                      "sch_arr_dt": "1477325280",
+                      "sch_dep_dt": "1477325280",
+                      "pre_dt": "1477325280",
+                      "pre_away": "792"
+                    },
+                    {
+                      "stop_sequence": "2",
+                      "stop_id": "North Leominster",
+                      "stop_name": "North Leominster",
+                      "sch_arr_dt": "1477325640",
+                      "sch_dep_dt": "1477325640",
+                      "pre_dt": "1477325604",
+                      "pre_away": "1116"
+                    },
+                    {
+                      "stop_sequence": "3",
+                      "stop_id": "Shirley",
+                      "stop_name": "Shirley",
+                      "sch_arr_dt": "1477326120",
+                      "sch_dep_dt": "1477326120",
+                      "pre_dt": "1477326035",
+                      "pre_away": "1547"
+                    },
+                    {
+                      "stop_sequence": "4",
+                      "stop_id": "Ayer",
+                      "stop_name": "Ayer",
+                      "sch_arr_dt": "1477326420",
+                      "sch_dep_dt": "1477326420",
+                      "pre_dt": "1477326314",
+                      "pre_away": "1826"
+                    },
+                    {
+                      "stop_sequence": "5",
+                      "stop_id": "Littleton / Rte 495",
+                      "stop_name": "Littleton/Rte 495",
+                      "sch_arr_dt": "1477326900",
+                      "sch_dep_dt": "1477326900",
+                      "pre_dt": "1477326779",
+                      "pre_away": "2291"
+                    },
+                    {
+                      "stop_sequence": "6",
+                      "stop_id": "South Acton",
+                      "stop_name": "South Acton",
+                      "sch_arr_dt": "1477327320",
+                      "sch_dep_dt": "1477327320",
+                      "pre_dt": "1477327112",
+                      "pre_away": "2624"
+                    },
+                    {
+                      "stop_sequence": "7",
+                      "stop_id": "West Concord",
+                      "stop_name": "West Concord",
+                      "sch_arr_dt": "1477327500",
+                      "sch_dep_dt": "1477327500",
+                      "pre_dt": "1477327355",
+                      "pre_away": "2867"
+                    },
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "Concord",
+                      "stop_name": "Concord",
+                      "sch_arr_dt": "1477327740",
+                      "sch_dep_dt": "1477327740",
+                      "pre_dt": "1477327555",
+                      "pre_away": "3067"
+                    },
+                    {
+                      "stop_sequence": "9",
+                      "stop_id": "Lincoln",
+                      "stop_name": "Lincoln",
+                      "sch_arr_dt": "1477328160",
+                      "sch_dep_dt": "1477328160",
+                      "pre_dt": "1477327833",
+                      "pre_away": "3345"
+                    },
+                    {
+                      "stop_sequence": "10",
+                      "stop_id": "Kendal Green",
+                      "stop_name": "Kendal Green",
+                      "sch_arr_dt": "1477328520",
+                      "sch_dep_dt": "1477328520",
+                      "pre_dt": "1477328115",
+                      "pre_away": "3627"
+                    },
+                    {
+                      "stop_sequence": "11",
+                      "stop_id": "Brandeis/ Roberts",
+                      "stop_name": "Brandeis/Roberts",
+                      "sch_arr_dt": "1477328640",
+                      "sch_dep_dt": "1477328640",
+                      "pre_dt": "1477328276",
+                      "pre_away": "3788"
+                    },
+                    {
+                      "stop_sequence": "12",
+                      "stop_id": "Waltham",
+                      "stop_name": "Waltham",
+                      "sch_arr_dt": "1477328880",
+                      "sch_dep_dt": "1477328880",
+                      "pre_dt": "1477328493",
+                      "pre_away": "4005"
+                    },
+                    {
+                      "stop_sequence": "13",
+                      "stop_id": "Belmont",
+                      "stop_name": "Belmont",
+                      "sch_arr_dt": "1477329240",
+                      "sch_dep_dt": "1477329240",
+                      "pre_dt": "1477328811",
+                      "pre_away": "4323"
+                    },
+                    {
+                      "stop_sequence": "14",
+                      "stop_id": "Porter Square",
+                      "stop_name": "Porter Square",
+                      "sch_arr_dt": "1477329540",
+                      "sch_dep_dt": "1477329540",
+                      "pre_dt": "1477329094",
+                      "pre_away": "4606"
+                    },
+                    {
+                      "stop_sequence": "15",
+                      "stop_id": "North Station",
+                      "stop_name": "North Station",
+                      "sch_arr_dt": "1477330140",
+                      "sch_dep_dt": "1477330140",
+                      "pre_dt": "1477329726",
+                      "pre_away": "5238"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_id": "CR-Haverhill",
+          "route_name": "Haverhill Line",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31174419-CR_MAY2016-hxh16011-Weekday-01",
+                  "trip_name": "205 (10:55 am from North Station)",
+                  "trip_headsign": "Haverhill",
+                  "vehicle": {
+                    "vehicle_id": "1630",
+                    "vehicle_lat": "42.6617813110352",
+                    "vehicle_lon": "-71.1433715820313",
+                    "vehicle_bearing": "13",
+                    "vehicle_speed": "14",
+                    "vehicle_timestamp": "1477324374"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "12",
+                      "stop_id": "Lawrence",
+                      "stop_name": "Lawrence",
+                      "sch_arr_dt": "1477324320",
+                      "sch_dep_dt": "1477324320",
+                      "pre_dt": "1477324696",
+                      "pre_away": "208"
+                    },
+                    {
+                      "stop_sequence": "13",
+                      "stop_id": "Bradford",
+                      "stop_name": "Bradford",
+                      "sch_arr_dt": "1477324860",
+                      "sch_dep_dt": "1477324860",
+                      "pre_dt": "1477325231",
+                      "pre_away": "743"
+                    },
+                    {
+                      "stop_sequence": "14",
+                      "stop_id": "Haverhill",
+                      "stop_name": "Haverhill",
+                      "sch_arr_dt": "1477324980",
+                      "sch_dep_dt": "1477324980",
+                      "pre_dt": "1477325421",
+                      "pre_away": "933"
+                    }
+                  ]
+                },
+                {
+                  "trip_id": "31174432-CR_MAY2016-hxh16011-Weekday-01",
+                  "trip_name": "207 (12:30 pm from North Station)",
+                  "trip_headsign": "Haverhill",
+                  "stop": [
+                    {
+                      "stop_sequence": "1",
+                      "stop_id": "North Station",
+                      "stop_name": "North Station",
+                      "sch_arr_dt": "1477326600",
+                      "sch_dep_dt": "1477326600",
+                      "pre_dt": "1477326600",
+                      "pre_away": "2112"
+                    },
+                    {
+                      "stop_sequence": "2",
+                      "stop_id": "Malden Center",
+                      "stop_name": "Malden Center",
+                      "sch_arr_dt": "1477327260",
+                      "sch_dep_dt": "1477327260",
+                      "pre_dt": "1477327257",
+                      "pre_away": "2769"
+                    },
+                    {
+                      "stop_sequence": "3",
+                      "stop_id": "Wyoming Hill",
+                      "stop_name": "Wyoming Hill",
+                      "sch_arr_dt": "1477327440",
+                      "sch_dep_dt": "1477327440",
+                      "pre_dt": "1477327456",
+                      "pre_away": "2968"
+                    },
+                    {
+                      "stop_sequence": "4",
+                      "stop_id": "Melrose Cedar Park",
+                      "stop_name": "Melrose Cedar Park",
+                      "sch_arr_dt": "1477327560",
+                      "sch_dep_dt": "1477327560",
+                      "pre_dt": "1477327576",
+                      "pre_away": "3088"
+                    },
+                    {
+                      "stop_sequence": "5",
+                      "stop_id": "Melrose Highlands",
+                      "stop_name": "Melrose Highlands",
+                      "sch_arr_dt": "1477327740",
+                      "sch_dep_dt": "1477327740",
+                      "pre_dt": "1477327690",
+                      "pre_away": "3202"
+                    },
+                    {
+                      "stop_sequence": "6",
+                      "stop_id": "Greenwood",
+                      "stop_name": "Greenwood",
+                      "sch_arr_dt": "1477327920",
+                      "sch_dep_dt": "1477327920",
+                      "pre_dt": "1477327841",
+                      "pre_away": "3353"
+                    },
+                    {
+                      "stop_sequence": "7",
+                      "stop_id": "Wakefield",
+                      "stop_name": "Wakefield",
+                      "sch_arr_dt": "1477328160",
+                      "sch_dep_dt": "1477328160",
+                      "pre_dt": "1477328027",
+                      "pre_away": "3539"
+                    },
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "Reading",
+                      "stop_name": "Reading",
+                      "sch_arr_dt": "1477328520",
+                      "sch_dep_dt": "1477328520",
+                      "pre_dt": "1477328371",
+                      "pre_away": "3883"
+                    },
+                    {
+                      "stop_sequence": "9",
+                      "stop_id": "North Wilmington",
+                      "stop_name": "North Wilmington",
+                      "sch_arr_dt": "1477328880",
+                      "sch_dep_dt": "1477328880",
+                      "pre_dt": "1477328784",
+                      "pre_away": "4296"
+                    },
+                    {
+                      "stop_sequence": "10",
+                      "stop_id": "Ballardvale",
+                      "stop_name": "Ballardvale",
+                      "sch_arr_dt": "1477329300",
+                      "sch_dep_dt": "1477329300",
+                      "pre_dt": "1477329125",
+                      "pre_away": "4637"
+                    },
+                    {
+                      "stop_sequence": "11",
+                      "stop_id": "Andover",
+                      "stop_name": "Andover",
+                      "sch_arr_dt": "1477329600",
+                      "sch_dep_dt": "1477329600",
+                      "pre_dt": "1477329375",
+                      "pre_away": "4887"
+                    },
+                    {
+                      "stop_sequence": "12",
+                      "stop_id": "Lawrence",
+                      "stop_name": "Lawrence",
+                      "sch_arr_dt": "1477330020",
+                      "sch_dep_dt": "1477330020",
+                      "pre_dt": "1477329727",
+                      "pre_away": "5239"
+                    },
+                    {
+                      "stop_sequence": "13",
+                      "stop_id": "Bradford",
+                      "stop_name": "Bradford",
+                      "sch_arr_dt": "1477330560",
+                      "sch_dep_dt": "1477330560",
+                      "pre_dt": "1477330246",
+                      "pre_away": "5758"
+                    },
+                    {
+                      "stop_sequence": "14",
+                      "stop_id": "Haverhill",
+                      "stop_name": "Haverhill",
+                      "sch_arr_dt": "1477330680",
+                      "sch_dep_dt": "1477330680",
+                      "pre_dt": "1477330496",
+                      "pre_away": "6008"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "31174402-CR_MAY2016-hxh16011-Weekday-01",
+                  "trip_name": "214 (12:18 pm from Haverhill)",
+                  "trip_headsign": "North Station",
+                  "stop": [
+                    {
+                      "stop_sequence": "1",
+                      "stop_id": "Haverhill",
+                      "stop_name": "Haverhill",
+                      "sch_arr_dt": "1477325880",
+                      "sch_dep_dt": "1477325880",
+                      "pre_dt": "1477325880",
+                      "pre_away": "1392"
+                    },
+                    {
+                      "stop_sequence": "2",
+                      "stop_id": "Bradford",
+                      "stop_name": "Bradford",
+                      "sch_arr_dt": "1477326000",
+                      "sch_dep_dt": "1477326000",
+                      "pre_dt": "1477326030",
+                      "pre_away": "1542"
+                    },
+                    {
+                      "stop_sequence": "3",
+                      "stop_id": "Lawrence",
+                      "stop_name": "Lawrence",
+                      "sch_arr_dt": "1477326480",
+                      "sch_dep_dt": "1477326480",
+                      "pre_dt": "1477326594",
+                      "pre_away": "2106"
+                    },
+                    {
+                      "stop_sequence": "4",
+                      "stop_id": "Andover",
+                      "stop_name": "Andover",
+                      "sch_arr_dt": "1477326900",
+                      "sch_dep_dt": "1477326900",
+                      "pre_dt": "1477326990",
+                      "pre_away": "2502"
+                    },
+                    {
+                      "stop_sequence": "5",
+                      "stop_id": "Ballardvale",
+                      "stop_name": "Ballardvale",
+                      "sch_arr_dt": "1477327200",
+                      "sch_dep_dt": "1477327200",
+                      "pre_dt": "1477327200",
+                      "pre_away": "2712"
+                    },
+                    {
+                      "stop_sequence": "6",
+                      "stop_id": "North Wilmington",
+                      "stop_name": "North Wilmington",
+                      "sch_arr_dt": "1477327620",
+                      "sch_dep_dt": "1477327620",
+                      "pre_dt": "1477327557",
+                      "pre_away": "3069"
+                    },
+                    {
+                      "stop_sequence": "7",
+                      "stop_id": "Reading",
+                      "stop_name": "Reading",
+                      "sch_arr_dt": "1477328040",
+                      "sch_dep_dt": "1477328040",
+                      "pre_dt": "1477327893",
+                      "pre_away": "3405"
+                    },
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "Wakefield",
+                      "stop_name": "Wakefield",
+                      "sch_arr_dt": "1477328340",
+                      "sch_dep_dt": "1477328340",
+                      "pre_dt": "1477328230",
+                      "pre_away": "3742"
+                    },
+                    {
+                      "stop_sequence": "9",
+                      "stop_id": "Greenwood",
+                      "stop_name": "Greenwood",
+                      "sch_arr_dt": "1477328520",
+                      "sch_dep_dt": "1477328520",
+                      "pre_dt": "1477328422",
+                      "pre_away": "3934"
+                    },
+                    {
+                      "stop_sequence": "10",
+                      "stop_id": "Melrose Highlands",
+                      "stop_name": "Melrose Highlands",
+                      "sch_arr_dt": "1477328640",
+                      "sch_dep_dt": "1477328640",
+                      "pre_dt": "1477328544",
+                      "pre_away": "4056"
+                    },
+                    {
+                      "stop_sequence": "11",
+                      "stop_id": "Melrose Cedar Park",
+                      "stop_name": "Melrose Cedar Park",
+                      "sch_arr_dt": "1477328760",
+                      "sch_dep_dt": "1477328760",
+                      "pre_dt": "1477328661",
+                      "pre_away": "4173"
+                    },
+                    {
+                      "stop_sequence": "12",
+                      "stop_id": "Wyoming Hill",
+                      "stop_name": "Wyoming Hill",
+                      "sch_arr_dt": "1477328880",
+                      "sch_dep_dt": "1477328880",
+                      "pre_dt": "1477328753",
+                      "pre_away": "4265"
+                    },
+                    {
+                      "stop_sequence": "13",
+                      "stop_id": "Malden Center",
+                      "stop_name": "Malden Center",
+                      "sch_arr_dt": "1477329060",
+                      "sch_dep_dt": "1477329060",
+                      "pre_dt": "1477328912",
+                      "pre_away": "4424"
+                    },
+                    {
+                      "stop_sequence": "14",
+                      "stop_id": "North Station",
+                      "stop_name": "North Station",
+                      "sch_arr_dt": "1477329780",
+                      "sch_dep_dt": "1477329780",
+                      "pre_dt": "1477329647",
+                      "pre_away": "5159"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_id": "CR-Lowell",
+          "route_name": "Lowell Line",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "31174489-CR_MAY2016-hxl16011-Weekday-01",
+                  "trip_name": "315 (11:15 am from North Station)",
+                  "trip_headsign": "Lowell",
+                  "vehicle": {
+                    "vehicle_id": "1638",
+                    "vehicle_lat": "42.5936088562012",
+                    "vehicle_lon": "-71.2811813354492",
+                    "vehicle_bearing": "337",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1477324370"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "Lowell",
+                      "stop_name": "Lowell",
+                      "sch_arr_dt": "1477324740",
+                      "sch_dep_dt": "1477324740",
+                      "pre_dt": "1477324810",
+                      "pre_away": "322"
+                    }
+                  ]
+                },
+                {
+                  "trip_id": "31174490-CR_MAY2016-hxl16011-Weekday-01",
+                  "trip_name": "317 (12:15 pm from North Station)",
+                  "trip_headsign": "Lowell",
+                  "vehicle": {
+                    "vehicle_id": "1626",
+                    "vehicle_lat": "42.3668899536133",
+                    "vehicle_lon": "-71.0629272460938",
+                    "vehicle_bearing": "6",
+                    "vehicle_speed": "2",
+                    "vehicle_timestamp": "1477324377"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "1",
+                      "stop_id": "North Station",
+                      "stop_name": "North Station",
+                      "sch_arr_dt": "1477325700",
+                      "sch_dep_dt": "1477325700",
+                      "pre_dt": "1477325700",
+                      "pre_away": "1212"
+                    },
+                    {
+                      "stop_sequence": "2",
+                      "stop_id": "West Medford",
+                      "stop_name": "West Medford",
+                      "sch_arr_dt": "1477326360",
+                      "sch_dep_dt": "1477326360",
+                      "pre_dt": "1477326231",
+                      "pre_away": "1743"
+                    },
+                    {
+                      "stop_sequence": "3",
+                      "stop_id": "Wedgemere",
+                      "stop_name": "Wedgemere",
+                      "sch_arr_dt": "1477326600",
+                      "sch_dep_dt": "1477326600",
+                      "pre_dt": "1477326449",
+                      "pre_away": "1961"
+                    },
+                    {
+                      "stop_sequence": "4",
+                      "stop_id": "Winchester Center",
+                      "stop_name": "Winchester Center",
+                      "sch_arr_dt": "1477326720",
+                      "sch_dep_dt": "1477326720",
+                      "pre_dt": "1477326554",
+                      "pre_away": "2066"
+                    },
+                    {
+                      "stop_sequence": "5",
+                      "stop_id": "Anderson/ Woburn",
+                      "stop_name": "Anderson/Woburn",
+                      "sch_arr_dt": "1477327140",
+                      "sch_dep_dt": "1477327140",
+                      "pre_dt": "1477326915",
+                      "pre_away": "2427"
+                    },
+                    {
+                      "stop_sequence": "6",
+                      "stop_id": "Wilmington",
+                      "stop_name": "Wilmington",
+                      "sch_arr_dt": "1477327320",
+                      "sch_dep_dt": "1477327320",
+                      "pre_dt": "1477327137",
+                      "pre_away": "2649"
+                    },
+                    {
+                      "stop_sequence": "7",
+                      "stop_id": "North Billerica",
+                      "stop_name": "North Billerica",
+                      "sch_arr_dt": "1477327920",
+                      "sch_dep_dt": "1477327920",
+                      "pre_dt": "1477327610",
+                      "pre_away": "3122"
+                    },
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "Lowell",
+                      "stop_name": "Lowell",
+                      "sch_arr_dt": "1477328340",
+                      "sch_dep_dt": "1477328340",
+                      "pre_dt": "1477328080",
+                      "pre_away": "3592"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "31174468-CR_MAY2016-hxl16011-Weekday-01",
+                  "trip_name": "320 (11:15 am from Lowell)",
+                  "trip_headsign": "North Station",
+                  "vehicle": {
+                    "vehicle_id": "1627",
+                    "vehicle_lat": "42.3877296447754",
+                    "vehicle_lon": "-71.0961074829102",
+                    "vehicle_bearing": "122",
+                    "vehicle_speed": "25",
+                    "vehicle_timestamp": "1477324360"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "North Station",
+                      "stop_name": "North Station",
+                      "sch_arr_dt": "1477324800",
+                      "sch_dep_dt": "1477324800",
+                      "pre_dt": "1477324699",
+                      "pre_away": "211"
+                    }
+                  ]
+                },
+                {
+                  "trip_id": "31174469-CR_MAY2016-hxl16011-Weekday-01",
+                  "trip_name": "322 (12:15 pm from Lowell)",
+                  "trip_headsign": "North Station",
+                  "stop": [
+                    {
+                      "stop_sequence": "1",
+                      "stop_id": "Lowell",
+                      "stop_name": "Lowell",
+                      "sch_arr_dt": "1477325700",
+                      "sch_dep_dt": "1477325700",
+                      "pre_dt": "1477325700",
+                      "pre_away": "1212"
+                    },
+                    {
+                      "stop_sequence": "2",
+                      "stop_id": "North Billerica",
+                      "stop_name": "North Billerica",
+                      "sch_arr_dt": "1477326180",
+                      "sch_dep_dt": "1477326180",
+                      "pre_dt": "1477326134",
+                      "pre_away": "1646"
+                    },
+                    {
+                      "stop_sequence": "3",
+                      "stop_id": "Wilmington",
+                      "stop_name": "Wilmington",
+                      "sch_arr_dt": "1477326660",
+                      "sch_dep_dt": "1477326660",
+                      "pre_dt": "1477326576",
+                      "pre_away": "2088"
+                    },
+                    {
+                      "stop_sequence": "4",
+                      "stop_id": "Anderson/ Woburn",
+                      "stop_name": "Anderson/Woburn",
+                      "sch_arr_dt": "1477326960",
+                      "sch_dep_dt": "1477326960",
+                      "pre_dt": "1477326812",
+                      "pre_away": "2324"
+                    },
+                    {
+                      "stop_sequence": "5",
+                      "stop_id": "Winchester Center",
+                      "stop_name": "Winchester Center",
+                      "sch_arr_dt": "1477327380",
+                      "sch_dep_dt": "1477327380",
+                      "pre_dt": "1477327180",
+                      "pre_away": "2692"
+                    },
+                    {
+                      "stop_sequence": "6",
+                      "stop_id": "Wedgemere",
+                      "stop_name": "Wedgemere",
+                      "sch_arr_dt": "1477327440",
+                      "sch_dep_dt": "1477327440",
+                      "pre_dt": "1477327292",
+                      "pre_away": "2804"
+                    },
+                    {
+                      "stop_sequence": "7",
+                      "stop_id": "West Medford",
+                      "stop_name": "West Medford",
+                      "sch_arr_dt": "1477327620",
+                      "sch_dep_dt": "1477327620",
+                      "pre_dt": "1477327490",
+                      "pre_away": "3002"
+                    },
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "North Station",
+                      "stop_name": "North Station",
+                      "sch_arr_dt": "1477328400",
+                      "sch_dep_dt": "1477328400",
+                      "pre_dt": "1477328292",
+                      "pre_away": "3804"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_id": "CR-Newburyport",
+          "route_name": "Newburyport/Rockport Line",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "30992513-CR_MAY2016-hxr16021-Weekday-01",
+                  "trip_name": "161 (11:20 am from North Station)",
+                  "trip_headsign": "Newburyport",
+                  "vehicle": {
+                    "vehicle_id": "1634",
+                    "vehicle_lat": "42.5229301452637",
+                    "vehicle_lon": "-70.8960113525391",
+                    "vehicle_bearing": "359",
+                    "vehicle_speed": "6",
+                    "vehicle_timestamp": "1477324353"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "6",
+                      "stop_id": "Beverly",
+                      "stop_name": "Beverly",
+                      "sch_arr_dt": "1477324560",
+                      "sch_dep_dt": "1477324560",
+                      "pre_dt": "1477324712",
+                      "pre_away": "224"
+                    },
+                    {
+                      "stop_sequence": "7",
+                      "stop_id": "North Beverly",
+                      "stop_name": "North Beverly",
+                      "sch_arr_dt": "1477324800",
+                      "sch_dep_dt": "1477324800",
+                      "pre_dt": "1477324978",
+                      "pre_away": "490"
+                    },
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "Hamilton/ Wenham",
+                      "stop_name": "Hamilton/Wenham",
+                      "sch_arr_dt": "1477325040",
+                      "sch_dep_dt": "1477325040",
+                      "pre_dt": "1477325218",
+                      "pre_away": "730"
+                    },
+                    {
+                      "stop_sequence": "9",
+                      "stop_id": "Ipswich",
+                      "stop_name": "Ipswich",
+                      "sch_arr_dt": "1477325400",
+                      "sch_dep_dt": "1477325400",
+                      "pre_dt": "1477325565",
+                      "pre_away": "1077"
+                    },
+                    {
+                      "stop_sequence": "10",
+                      "stop_id": "Rowley",
+                      "stop_name": "Rowley",
+                      "sch_arr_dt": "1477325700",
+                      "sch_dep_dt": "1477325700",
+                      "pre_dt": "1477325926",
+                      "pre_away": "1438"
+                    },
+                    {
+                      "stop_sequence": "11",
+                      "stop_id": "Newburyport",
+                      "stop_name": "Newburyport",
+                      "sch_arr_dt": "1477326180",
+                      "sch_dep_dt": "1477326180",
+                      "pre_dt": "1477326372",
+                      "pre_away": "1884"
+                    }
+                  ]
+                },
+                {
+                  "trip_id": "30992512-CR_MAY2016-hxr16021-Weekday-01",
+                  "trip_name": "109 (12:00 pm from North Station)",
+                  "trip_headsign": "Rockport",
+                  "vehicle": {
+                    "vehicle_id": "1641",
+                    "vehicle_lat": "42.3671798706055",
+                    "vehicle_lon": "-71.0627288818359",
+                    "vehicle_bearing": "323",
+                    "vehicle_speed": "1",
+                    "vehicle_timestamp": "1477324374"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "1",
+                      "stop_id": "North Station",
+                      "stop_name": "North Station",
+                      "sch_arr_dt": "1477324800",
+                      "sch_dep_dt": "1477324800",
+                      "pre_dt": "1477324800",
+                      "pre_away": "312"
+                    },
+                    {
+                      "stop_sequence": "2",
+                      "stop_id": "Chelsea",
+                      "stop_name": "Chelsea",
+                      "sch_arr_dt": "1477325520",
+                      "sch_dep_dt": "1477325520",
+                      "pre_dt": "1477325417",
+                      "pre_away": "929"
+                    },
+                    {
+                      "stop_sequence": "3",
+                      "stop_id": "Lynn",
+                      "stop_name": "Lynn",
+                      "sch_arr_dt": "1477326000",
+                      "sch_dep_dt": "1477326000",
+                      "pre_dt": "1477325944",
+                      "pre_away": "1456"
+                    },
+                    {
+                      "stop_sequence": "4",
+                      "stop_id": "Swampscott",
+                      "stop_name": "Swampscott",
+                      "sch_arr_dt": "1477326300",
+                      "sch_dep_dt": "1477326300",
+                      "pre_dt": "1477326140",
+                      "pre_away": "1652"
+                    },
+                    {
+                      "stop_sequence": "5",
+                      "stop_id": "Salem",
+                      "stop_name": "Salem",
+                      "sch_arr_dt": "1477326720",
+                      "sch_dep_dt": "1477326720",
+                      "pre_dt": "1477326452",
+                      "pre_away": "1964"
+                    },
+                    {
+                      "stop_sequence": "6",
+                      "stop_id": "Beverly",
+                      "stop_name": "Beverly",
+                      "sch_arr_dt": "1477326960",
+                      "sch_dep_dt": "1477326960",
+                      "pre_dt": "1477326694",
+                      "pre_away": "2206"
+                    },
+                    {
+                      "stop_sequence": "7",
+                      "stop_id": "Montserrat",
+                      "stop_name": "Montserrat",
+                      "sch_arr_dt": "1477327200",
+                      "sch_dep_dt": "1477327200",
+                      "pre_dt": "1477326919",
+                      "pre_away": "2431"
+                    },
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "Beverly Farms",
+                      "stop_name": "Beverly Farms",
+                      "sch_arr_dt": "1477327560",
+                      "sch_dep_dt": "1477327560",
+                      "pre_dt": "1477327190",
+                      "pre_away": "2702"
+                    },
+                    {
+                      "stop_sequence": "9",
+                      "stop_id": "Manchester",
+                      "stop_name": "Manchester",
+                      "sch_arr_dt": "1477327860",
+                      "sch_dep_dt": "1477327860",
+                      "pre_dt": "1477327439",
+                      "pre_away": "2951"
+                    },
+                    {
+                      "stop_sequence": "10",
+                      "stop_id": "West Gloucester",
+                      "stop_name": "West Gloucester",
+                      "sch_arr_dt": "1477328220",
+                      "sch_dep_dt": "1477328220",
+                      "pre_dt": "1477327841",
+                      "pre_away": "3353"
+                    },
+                    {
+                      "stop_sequence": "11",
+                      "stop_id": "Gloucester",
+                      "stop_name": "Gloucester",
+                      "sch_arr_dt": "1477328640",
+                      "sch_dep_dt": "1477328640",
+                      "pre_dt": "1477328167",
+                      "pre_away": "3679"
+                    },
+                    {
+                      "stop_sequence": "12",
+                      "stop_id": "Rockport",
+                      "stop_name": "Rockport",
+                      "sch_arr_dt": "1477329120",
+                      "sch_dep_dt": "1477329120",
+                      "pre_dt": "1477328644",
+                      "pre_away": "4156"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "direction_id": "1",
+              "direction_name": "Inbound",
+              "trip": [
+                {
+                  "trip_id": "30992489-CR_MAY2016-hxr16021-Weekday-01",
+                  "trip_name": "112 (11:00 am from Rockport)",
+                  "trip_headsign": "North Station",
+                  "vehicle": {
+                    "vehicle_id": "1826",
+                    "vehicle_lat": "42.4712181091309",
+                    "vehicle_lon": "-70.9278030395508",
+                    "vehicle_bearing": "237",
+                    "vehicle_speed": "15",
+                    "vehicle_timestamp": "1477324361"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "10",
+                      "stop_id": "Lynn",
+                      "stop_name": "Lynn",
+                      "sch_arr_dt": "1477324440",
+                      "sch_dep_dt": "1477324440",
+                      "pre_dt": "1477324485",
+                      "pre_away": "2"
+                    },
+                    {
+                      "stop_sequence": "11",
+                      "stop_id": "Chelsea",
+                      "stop_name": "Chelsea",
+                      "sch_arr_dt": "1477324980",
+                      "sch_dep_dt": "1477324980",
+                      "pre_dt": "1477325011",
+                      "pre_away": "523"
+                    },
+                    {
+                      "stop_sequence": "12",
+                      "stop_id": "North Station",
+                      "stop_name": "North Station",
+                      "sch_arr_dt": "1477325640",
+                      "sch_dep_dt": "1477325640",
+                      "pre_dt": "1477325730",
+                      "pre_away": "1242"
+                    }
+                  ]
+                },
+                {
+                  "trip_id": "30992490-CR_MAY2016-hxr16021-Weekday-01",
+                  "trip_name": "166 (11:40 am from Newburyport)",
+                  "trip_headsign": "North Station",
+                  "vehicle": {
+                    "vehicle_id": "1640",
+                    "vehicle_lat": "42.6760902404785",
+                    "vehicle_lon": "-70.8408813476563",
+                    "vehicle_bearing": "197",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1477324380"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "4",
+                      "stop_id": "Hamilton/ Wenham",
+                      "stop_name": "Hamilton/Wenham",
+                      "sch_arr_dt": "1477324620",
+                      "sch_dep_dt": "1477324620",
+                      "pre_dt": "1477324703",
+                      "pre_away": "215"
+                    },
+                    {
+                      "stop_sequence": "5",
+                      "stop_id": "North Beverly",
+                      "stop_name": "North Beverly",
+                      "sch_arr_dt": "1477324860",
+                      "sch_dep_dt": "1477324860",
+                      "pre_dt": "1477324959",
+                      "pre_away": "471"
+                    },
+                    {
+                      "stop_sequence": "6",
+                      "stop_id": "Beverly",
+                      "stop_name": "Beverly",
+                      "sch_arr_dt": "1477325220",
+                      "sch_dep_dt": "1477325220",
+                      "pre_dt": "1477325219",
+                      "pre_away": "731"
+                    },
+                    {
+                      "stop_sequence": "7",
+                      "stop_id": "Salem",
+                      "stop_name": "Salem",
+                      "sch_arr_dt": "1477325460",
+                      "sch_dep_dt": "1477325460",
+                      "pre_dt": "1477325443",
+                      "pre_away": "955"
+                    },
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "Swampscott",
+                      "stop_name": "Swampscott",
+                      "sch_arr_dt": "1477325940",
+                      "sch_dep_dt": "1477325940",
+                      "pre_dt": "1477325783",
+                      "pre_away": "1295"
+                    },
+                    {
+                      "stop_sequence": "9",
+                      "stop_id": "Lynn",
+                      "stop_name": "Lynn",
+                      "sch_arr_dt": "1477326180",
+                      "sch_dep_dt": "1477326180",
+                      "pre_dt": "1477325976",
+                      "pre_away": "1488"
+                    },
+                    {
+                      "stop_sequence": "10",
+                      "stop_id": "Chelsea",
+                      "stop_name": "Chelsea",
+                      "sch_arr_dt": "1477326720",
+                      "sch_dep_dt": "1477326720",
+                      "pre_dt": "1477326509",
+                      "pre_away": "2021"
+                    },
+                    {
+                      "stop_sequence": "11",
+                      "stop_id": "North Station",
+                      "stop_name": "North Station",
+                      "sch_arr_dt": "1477327380",
+                      "sch_dep_dt": "1477327380",
+                      "pre_dt": "1477327234",
+                      "pre_away": "2746"
+                    }
+                  ]
+                },
+                {
+                  "trip_id": "30992491-CR_MAY2016-hxr16021-Weekday-01",
+                  "trip_name": "114 (12:30 pm from Rockport)",
+                  "trip_headsign": "North Station",
+                  "vehicle": {
+                    "vehicle_id": "1810",
+                    "vehicle_lat": "42.6549606323242",
+                    "vehicle_lon": "-70.6275787353516",
+                    "vehicle_bearing": "218",
+                    "vehicle_speed": "0",
+                    "vehicle_timestamp": "1477324375"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "1",
+                      "stop_id": "Rockport",
+                      "stop_name": "Rockport",
+                      "sch_arr_dt": "1477326600",
+                      "sch_dep_dt": "1477326600",
+                      "pre_dt": "1477326600",
+                      "pre_away": "2112"
+                    },
+                    {
+                      "stop_sequence": "2",
+                      "stop_id": "Gloucester",
+                      "stop_name": "Gloucester",
+                      "sch_arr_dt": "1477327020",
+                      "sch_dep_dt": "1477327020",
+                      "pre_dt": "1477326960",
+                      "pre_away": "2472"
+                    },
+                    {
+                      "stop_sequence": "3",
+                      "stop_id": "West Gloucester",
+                      "stop_name": "West Gloucester",
+                      "sch_arr_dt": "1477327380",
+                      "sch_dep_dt": "1477327380",
+                      "pre_dt": "1477327433",
+                      "pre_away": "2945"
+                    },
+                    {
+                      "stop_sequence": "4",
+                      "stop_id": "Manchester",
+                      "stop_name": "Manchester",
+                      "sch_arr_dt": "1477327800",
+                      "sch_dep_dt": "1477327800",
+                      "pre_dt": "1477327850",
+                      "pre_away": "3362"
+                    },
+                    {
+                      "stop_sequence": "5",
+                      "stop_id": "Beverly Farms",
+                      "stop_name": "Beverly Farms",
+                      "sch_arr_dt": "1477328220",
+                      "sch_dep_dt": "1477328220",
+                      "pre_dt": "1477328217",
+                      "pre_away": "3729"
+                    },
+                    {
+                      "stop_sequence": "6",
+                      "stop_id": "Montserrat",
+                      "stop_name": "Montserrat",
+                      "sch_arr_dt": "1477328700",
+                      "sch_dep_dt": "1477328700",
+                      "pre_dt": "1477328504",
+                      "pre_away": "4016"
+                    },
+                    {
+                      "stop_sequence": "7",
+                      "stop_id": "Beverly",
+                      "stop_name": "Beverly",
+                      "sch_arr_dt": "1477328880",
+                      "sch_dep_dt": "1477328880",
+                      "pre_dt": "1477328709",
+                      "pre_away": "4221"
+                    },
+                    {
+                      "stop_sequence": "8",
+                      "stop_id": "Salem",
+                      "stop_name": "Salem",
+                      "sch_arr_dt": "1477329120",
+                      "sch_dep_dt": "1477329120",
+                      "pre_dt": "1477328979",
+                      "pre_away": "4491"
+                    },
+                    {
+                      "stop_sequence": "9",
+                      "stop_id": "Swampscott",
+                      "stop_name": "Swampscott",
+                      "sch_arr_dt": "1477329600",
+                      "sch_dep_dt": "1477329600",
+                      "pre_dt": "1477329382",
+                      "pre_away": "4894"
+                    },
+                    {
+                      "stop_sequence": "10",
+                      "stop_id": "Lynn",
+                      "stop_name": "Lynn",
+                      "sch_arr_dt": "1477329840",
+                      "sch_dep_dt": "1477329840",
+                      "pre_dt": "1477329531",
+                      "pre_away": "5043"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "alert_headers": [
+    {
+      "alert_id": 138881,
+      "header_text": "The arrival times of some Fitchburg Line trains have been adjusted by 5-10 minutes to reflect the actual performance of these trains under the new schedules.",
+      "effect_name": "Schedule Change"
+    },
+    {
+      "alert_id": 144368,
+      "header_text": "Please board all trains on the inbound platforms at Haverhill & Bradford stations until further notice.",
+      "effect_name": "Track Change"
+    },
+    {
+      "alert_id": 151845,
+      "header_text": "Fitchburg Line notice: The entrance to the Commuter Rail at Porter Station is closed for repair. Please utilize the subway entrance to access the Commuter Rail.",
+      "effect_name": "Service Change"
+    },
+    {
+      "alert_id": 152291,
+      "header_text": "Pedestrian access to North Station will be through Legends Way beginning Saturday, October 22, through February 2017, due to the Hub on Causeway Project",
+      "effect_name": "Service Change"
+    },
+    {
+      "alert_id": 152721,
+      "header_text": "Please board all Newburyport/Rockport Line trains on the inbound platform at Beverly.",
+      "effect_name": "Track Change"
+    },
+    {
+      "alert_id": 152742,
+      "header_text": "Please board all Lowell Line trains on the inbound platform at North Billerica.",
+      "effect_name": "Track Change"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "mode": [
+    {
+      "route_type": "2",
+      "mode_name": "Commuter Rail",
+      "route": [
+        {
+          "route_id": "CR-Fitchburg",
+          "route_name": "Fitchburg Line",
+          "direction": [
+            {
+              "direction_id": "0",
+              "direction_name": "Outbound",
+              "trip": [
+                {
+                  "trip_id": "30999151-CR_MAY2016-hxf16011-Weekday-01",
+                  "trip_name": "409 (11:30 am from North Station)",
+                  "trip_headsign": "Fitchburg",
+                  "vehicle": {
+                    "vehicle_id": "1636",
+                    "vehicle_lat": "42.3734703063965",
+                    "vehicle_lon": "-71.2393493652344",
+                    "vehicle_bearing": "246",
+                    "vehicle_speed": "11",
+                    "vehicle_timestamp": "1477324350"
+                  },
+                  "stop": [
+                    {
+                      "stop_sequence": "15",
+                      "stop_id": "Fitchburg",
+                      "stop_name": "Fitchburg",
+                      "sch_arr_dt": "1477328100",
+                      "sch_dep_dt": "1477328100",
+                      "pre_dt": "1477327853",
+                      "pre_away": "3365"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "alert_headers": []
+}
