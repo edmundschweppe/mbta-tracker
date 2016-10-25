@@ -33,14 +33,14 @@ namespace MbtaTracker.Console
             return 0;
         }
 
-        private void LoadGtfsStaticData()
+        public void LoadGtfsStaticData()
         {
             string folder = @"C:\Users\edmund\Downloads";
             string file = @"MBTA_GTFS_20160921.zip";
 
             Download dl = new Download
             {
-                download_date = DateTime.Now,
+                download_date = DateTime.UtcNow,
                 download_file_name = Path.Combine(folder, file)
             };
             dl.LoadFromZip();
@@ -51,14 +51,15 @@ namespace MbtaTracker.Console
             };
         }
 
-        private void LoadMbtaRtData()
+        public void LoadMbtaRtData()
         {
+            string json = GetPredictionsByRoutesJson().Result;
             Prediction p = new Prediction
             {
-                prediction_time = DateTime.UtcNow
+                prediction_time = DateTime.UtcNow,
+                prediction_json = json
             };
-            string json = GetPredictionsByRoutesJson().Result;
-            p.LoadFromJson(json);
+            p.LoadFromJson();
             using (var db = new MbtaTrackerDb(_connStr))
             {
                 db.Predictions.Add(p);

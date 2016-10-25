@@ -20,6 +20,8 @@ namespace MbtaTracker.DataAccess
 
         public DateTime prediction_time { get; set; }
 
+        public string prediction_json { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PredictionTrip> PredictionTrips { get; set; }
     }

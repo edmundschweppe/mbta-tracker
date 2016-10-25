@@ -124,29 +124,31 @@ namespace MbtaTracker.UnitTests
 
         #region Tests
         [TestMethod]
-        public void PredictionTrip_EmptyJson()
+        public void LoadFromJson_EmptyJson()
         {
-            string json = String.Empty;
+            _target.prediction_json = String.Empty;
 
-            _target.LoadFromJson(json);
+            _target.LoadFromJson();
 
             Assert.AreEqual(0, _target.PredictionTrips.Count, "checking PredictionTrips.Count");
         }
 
         [TestMethod]
-        public void PredictionTrip_AlertHeaderOnly()
+        public void LoadFromJson_AlertHeaderOnly()
         {
-            string json = @"{""alert_headers"":[]}";
+            _target.prediction_json = @"{""alert_headers"":[]}";
 
-            _target.LoadFromJson(json);
+            _target.LoadFromJson();
 
             Assert.AreEqual(0, _target.PredictionTrips.Count, "checking PredictionTrips.Count");
         }
 
         [TestMethod]
-        public void PredictionTrip_OneOutbound_NoVehicle()
+        public void LoadFromJson_OneOutbound_NoVehicle()
         {
-            _target.LoadFromJson(_oneOutboundFitchburg_NoVehicle);
+            _target.prediction_json = _oneOutboundFitchburg_NoVehicle;
+
+            _target.LoadFromJson();
 
             Assert.AreEqual(1, _target.PredictionTrips.Count, "checking PredictionTrips.Count");
             var actualTrip = _target.PredictionTrips.ElementAt(0);
@@ -172,9 +174,11 @@ namespace MbtaTracker.UnitTests
         }
 
         [TestMethod]
-        public void PredictionTrip_OneOutbound()
+        public void LoadFromJson_OneOutbound()
         {
-            _target.LoadFromJson(_oneFitchburgOutbound);
+            _target.prediction_json = _oneFitchburgOutbound;
+
+            _target.LoadFromJson();
 
             Assert.AreEqual(1, _target.PredictionTrips.Count, "checking PredictionTrips.Count");
             var actualTrip = _target.PredictionTrips.ElementAt(0);

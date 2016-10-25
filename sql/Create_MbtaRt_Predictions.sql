@@ -23,6 +23,7 @@ END;
 CREATE TABLE [MbtaRt].[Predictions](
 	[prediction_id] [int] IDENTITY(1,1) NOT NULL,
 	[prediction_time] [datetime] NOT NULL,
+	[prediction_json] [nvarchar](max) null,
 CONSTRAINT [PK_MbtaRt_Predictions] PRIMARY KEY CLUSTERED 
 (
 	[prediction_id] ASC

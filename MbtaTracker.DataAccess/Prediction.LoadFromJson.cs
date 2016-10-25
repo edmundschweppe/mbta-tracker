@@ -13,9 +13,9 @@ namespace MbtaTracker.DataAccess
         /// Utility method to populate a Prediction entity from 
         /// a call to MBTA realtime 2.0 API predictionsbyroute
         /// </summary>
-        /// <param name="json"></param>
-		public void LoadFromJson(string json)
+        public void LoadFromJson()
         {
+            string json = prediction_json;
             var jsonPred = JsonConvert.DeserializeObject<PredictionsByRoutesJson.Rootobject>(json);
             if (jsonPred != null)
             {
