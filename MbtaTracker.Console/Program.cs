@@ -1,6 +1,11 @@
-﻿using MbtaTracker.DataAccess;
+﻿#define TRACE
+
+using MbtaTracker.DataAccess;
+using MbtaTracker.DataLoaders;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -12,9 +17,7 @@ namespace MbtaTracker.Console
     class Program
     {
         private string[] _args;
-        private string _apiKey = "wX9NwuHnZU2ToO7GmGR9uw";
-        private string _connStr = @"data source=localhost;initial catalog=MbtaTracker;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
-
+ 
         static int Main(string[] args)
         {
             Program program = new Program(args);
@@ -33,57 +36,34 @@ namespace MbtaTracker.Console
             return 0;
         }
 
-        public void LoadGtfsStaticData()
+        private void LoadGtfsStaticData()
         {
-            string folder = @"C:\Users\edmund\Downloads";
-            string file = @"MBTA_GTFS_20160921.zip";
+            string folder = ConfigurationManager.AppSettings["GtfsStaticFolder"];
+            string file = ConfigurationManager.AppSettings["GtfsStaticZipFile"];
+            string connStr = ConfigurationManager.ConnectionStrings["MbtaTracker"].ConnectionString;
 
-            Download dl = new Download
+            GtfsStaticLoader l = new GtfsStaticLoader
             {
-                download_date = DateTime.UtcNow,
-                download_file_name = Path.Combine(folder, file)
+                ZipFileFolder = folder,
+                ZipFileName = file,
+                ConnectionString = connStr
             };
-            dl.LoadFromZip();
-            using (var db = new MbtaTrackerDb(_connStr))
-            {
-                db.Downloads.Add(dl);
-                db.SaveChanges();
-            };
+
+            l.Load();
         }
 
-        public void LoadMbtaRtData()
+        private void LoadMbtaRtData()
         {
-            string json = GetPredictionsByRoutesJson().Result;
-            Prediction p = new Prediction
-            {
-                prediction_time = DateTime.UtcNow,
-                prediction_json = json
-            };
-            p.LoadFromJson();
-            using (var db = new MbtaTrackerDb(_connStr))
-            {
-                db.Predictions.Add(p);
-                db.SaveChanges();
-            }
-        }
+            string apiKey = ConfigurationManager.AppSettings["MbtaRealtimeApiKey"];
+            string connStr = ConfigurationManager.ConnectionStrings["MbtaTracker"].ConnectionString;
 
-        private async Task<string> GetPredictionsByRoutesJson()
-        {
-            string[] routes;
-            using (var db = new MbtaTrackerDb(_connStr))
+            MbtaRtLoader l = new MbtaRtLoader
             {
-                routes = db.Routes.Select(r => r.route_id).ToArray();
-            }
-                //string[] routes = { "CR-Fitchburg", "CR-Newburyport", "CR-Lowell", "CR-Haverhill" };
-                string url = String.Format("http://realtime.mbta.com/developer/api/v2/predictionsbyroutes?api_key={0}&routes={1}&format=json",
-                     _apiKey,
-                     String.Join(",", routes));
-            using (var client = new HttpClient())
-            {
-                var response = await client.GetAsync(url);
-                var result = await response.Content.ReadAsStringAsync();
-                return result;
-            }
+                ApiKey = apiKey,
+                ConnectionString = connStr
+            };
+
+            l.Load();
         }
     }
 }

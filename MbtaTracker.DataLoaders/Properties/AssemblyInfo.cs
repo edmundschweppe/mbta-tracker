@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MbtaTracker.Console")]
+[assembly: AssemblyTitle("MbtaTracker.DataLoaders")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MbtaTracker.Console")]
+[assembly: AssemblyProduct("MbtaTracker.DataLoaders")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("38fc9ee9-f4b4-4fa9-b9b3-95e7cba25988")]
+[assembly: Guid("a2e36eaf-1bb5-4808-b967-10e9236e31cd")]
 
 // Version information for an assembly consists of the following four values:
 //
