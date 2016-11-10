@@ -31,8 +31,28 @@ namespace MbtaTracker.Console
 
         public int Run()
         {
-            //LoadGtfsStaticData();
-            LoadMbtaRtData();
+            if (_args.Length > 0)
+            {
+                switch(_args[0].ToLowerInvariant())
+                {
+                    case "/loadstatic":
+                        LoadGtfsStaticData();
+                        break;
+                    case "/loadrealtime":
+                    case "/loadrt":
+                        LoadMbtaRtData();
+                        break;
+                    default:
+                        Trace.TraceError("Invalid option {0}", _args[0]);
+                        return 1;
+                }
+            }
+            else
+            {
+                Trace.TraceError("Either /loadstatic or /loadrt required");
+                return 1;
+            }
+
             return 0;
         }
 

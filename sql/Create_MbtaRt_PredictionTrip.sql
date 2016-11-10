@@ -60,3 +60,14 @@ END
 GO
 
 
+CREATE NONCLUSTERED INDEX [IX_MbtaRt_PredictionTrip_prediction_id]
+ON [MbtaRt].[PredictionTrip] ([prediction_id])
+INCLUDE ([route_id],[trip_id]);
+IF @@ERROR = 0
+	PRINT 'Successfully created [IX_MbtaRt_PredictionTrip_prediction_id] index';
+ELSE
+BEGIN
+	PRINT 'Error creating Successfully created [IX_MbtaRt_PredictionTrip_prediction_id] index';
+	SET NOEXEC ON
+END
+GO

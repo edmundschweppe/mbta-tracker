@@ -61,4 +61,14 @@ BEGIN
 END
 GO
 
+CREATE NONCLUSTERED INDEX [IX_PredictionTripStop_prediction_trip_row_id]
+ON [MbtaRt].[PredictionTripStop] ([prediction_trip_row_id]);
+IF @@ERROR = 0
+	PRINT 'Successfully created [IX_PredictionTripStop_prediction_trip_row_id] index';
+ELSE
+BEGIN
+	PRINT 'Error creating [IX_PredictionTripStop_prediction_trip_row_id] index; aborting';
+	SET NOEXEC ON
+END
+GO
 
