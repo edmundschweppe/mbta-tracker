@@ -65,8 +65,12 @@ and getdate() between c.start_date and c.end_date
             //}
             using (var db = new MbtaTrackerDb(connStr))
             {
-                routes = db.Trips
-                    .Join(db.Calendars.Where( c=> c.start_date <= DateTime.Today && DateTime.Today <= c.end_date),
+                int dlId = db.Feed_Info.Where(fi => fi.feed_start_date <= DateTime.Today && DateTime.Today <= fi.feed_end_date)
+                    .OrderByDescending(fi => fi.download_id)
+                    .FirstOrDefault()
+                    .download_id;
+                routes = db.Trips.Where(t => t.download_id == dlId)
+                    .Join(db.Calendars.Where( c=> c.download_id == dlId && c.start_date <= DateTime.Today && DateTime.Today <= c.end_date),
                         t => new { t.download_id, t.service_id },
                         c => new { c.download_id, c.service_id },
                         (t, c) => t.route_id
