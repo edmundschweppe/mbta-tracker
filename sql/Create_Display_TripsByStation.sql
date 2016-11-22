@@ -67,10 +67,10 @@ GO
 CREATE NONCLUSTERED INDEX [IX_Display_TripsByStation_stop_id]
 ON [Display].[TripsByStation] ([stop_id]);
 IF @@ERROR = 0
-	PRINT 'Successfully created [IX_Display_TripsByStation_route_id] index';
+	PRINT 'Successfully created [IX_Display_TripsByStation_stop_id] index';
 ELSE
 BEGIN
-	PRINT 'Error creating [IX_Display_TripsByStation_route_id] index; aborting';
+	PRINT 'Error creating [IX_Display_TripsByStation_stop_id] index; aborting';
 	SET NOEXEC ON
 END
 GO

@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,6 +34,16 @@ namespace MbtaTracker.DataLoaders
             set
             {
                 _bulkHelper = value;
+            }
+        }
+        public string Version
+        {
+            get
+            {
+                return Assembly.GetAssembly(this.GetType())
+                    .GetName()
+                    .Version
+                    .ToString();
             }
         }
 
