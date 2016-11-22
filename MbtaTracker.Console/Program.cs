@@ -84,6 +84,7 @@ namespace MbtaTracker.Console
             };
 
             l.Load();
+            l.ReloadDenormalizedTables();
         }
     }
 }

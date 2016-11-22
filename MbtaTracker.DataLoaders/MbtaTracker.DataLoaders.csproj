@@ -54,9 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BulkCopyHelper.cs" />
     <Compile Include="GtfsStaticLoader.cs" />
     <Compile Include="MbtaRtLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TripsByStation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MbtaTracker.DataAccess\MbtaTracker.DataAccess.csproj">

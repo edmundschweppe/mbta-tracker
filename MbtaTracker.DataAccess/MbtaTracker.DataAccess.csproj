@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calendar.cs" />
+    <Compile Include="Calendar.ServiceIsValid.cs" />
     <Compile Include="Calendar_Dates.cs" />
     <Compile Include="Download.cs" />
     <Compile Include="Download.LoadFromZip.cs" />
