@@ -20,6 +20,7 @@ namespace MbtaTracker.DataLoaders
         public string LatestRouteList { get; private set; }
 
         private IBulkCopyHelper _bulkHelper;
+        private IMbtaTrackerDb _trackerDb;
 
         public IBulkCopyHelper BulkHelper
         {
@@ -36,6 +37,22 @@ namespace MbtaTracker.DataLoaders
                 _bulkHelper = value;
             }
         }
+        public IMbtaTrackerDb TrackerDb
+        {
+            get
+            {
+                if (_trackerDb == null)
+                {
+                    return new MbtaTrackerDb(ConnectionString);
+                }
+                return _trackerDb;
+            }
+            set
+            {
+                _trackerDb = value;
+            }
+        }
+
         public string Version
         {
             get
@@ -128,7 +145,7 @@ and getdate() between c.start_date and c.end_date
         public void ReloadDenormalizedTables()
         {
             DataTable dt = TripsByStation.CreateDataTable();
-            using (var db = new MbtaTrackerDb(ConnectionString))
+            using (var db = this.TrackerDb)
             {
                 int dlId = db.Feed_Info
                     .Where(fi => fi.feed_start_date <= DateTime.Today
@@ -136,7 +153,7 @@ and getdate() between c.start_date and c.end_date
                     .OrderByDescending(fi => fi.download_id)
                     .First()
                     .download_id;
-                var currentSched = db.Downloads.First(d => d.download_id == dlId);
+                var currentSched = db.Downloads.Single(d => d.download_id == dlId);
 
                 // Start with predicted trips
                 var currentPred = db.Predictions
@@ -163,8 +180,8 @@ and getdate() between c.start_date and c.end_date
                         stop_id = predTrip.stop.stop_id,
                         stop_name = predTrip.stop.stop_name,
                         vehicle_id = (predTrip.vehicle == null ? "(not reported)" : predTrip.vehicle.vehicle_id ),
-                        sched_dep_dt = predTrip.stop.sch_dep_dt.ToLocalTime(),
-                        pred_dt = predTrip.stop.pre_dt.ToLocalTime(),
+                        sched_dep_dt = predTrip.stop.sch_dep_dt,
+                        pred_dt = predTrip.stop.pre_dt,
                         pred_away = predTrip.stop.pre_away
                     };
                     t.route_name = currentSched.Routes
@@ -218,11 +235,13 @@ and getdate() between c.start_date and c.end_date
                     .ToList();
                 var schedStopIds = currentSched.Stops
                     .Select(s => s.stop_id)
-                    .Distinct();
+                    .Distinct()
+                    .ToList();
                 var schedStops = schedStopIds
                     .Select(s => new { stop_id = s, direction_id = 0 })
                     .Union(schedStopIds.Select(s => new { stop_id = s, direction_id = 1 }))
-                    .OrderBy(s => s.stop_id).ThenBy(s => s.direction_id);
+                    .OrderBy(s => s.stop_id).ThenBy(s => s.direction_id)
+                    .ToList();
 
                 foreach (var s in schedStops)
                 {
@@ -232,10 +251,12 @@ and getdate() between c.start_date and c.end_date
                             .Where(st => st.stop_id == s.stop_id
                                     && tripIdsByDirection[s.direction_id].Contains(st.trip_id)
                                     && DateFromSchedStopTime(st.departure_time_txt) > DateTime.Now)
-                            .OrderBy(st => DateFromSchedStopTime(st.departure_time_txt));
+                            .OrderBy(st => DateFromSchedStopTime(st.departure_time_txt))
+                            .ToList();
                         var stopTripsToAdd = schedStopTrips.Where((st, index) => 
                             (index == 0) 
-                            || (DateFromSchedStopTime(st.departure_time_txt) <= DateTime.Now.AddHours(1)));
+                            || (DateFromSchedStopTime(st.departure_time_txt) <= DateTime.Now.AddHours(1)))
+                            .ToList();
                         foreach(var addMe in stopTripsToAdd)
                         {
                             var stop = currentSched.Stops

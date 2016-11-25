@@ -64,6 +64,7 @@
     <Compile Include="Download.cs" />
     <Compile Include="Download.LoadFromZip.cs" />
     <Compile Include="Feed_Info.cs" />
+    <Compile Include="IMbtaTrackerDb.cs" />
     <Compile Include="MbtaTrackerDb.cs" />
     <Compile Include="Prediction.cs" />
     <Compile Include="PredictionsByRouteJson.cs" />

@@ -5,7 +5,7 @@ namespace MbtaTracker.DataAccess
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class MbtaTrackerDb : DbContext
+    public partial class MbtaTrackerDb : DbContext, IMbtaTrackerDb
     {
         public MbtaTrackerDb()
             : base("name=MbtaTrackerDb")
