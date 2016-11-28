@@ -178,6 +178,7 @@ and getdate() between c.start_date and c.end_date
                         route_id = predTrip.trip.route_id,
                         trip_id = predTrip.trip.trip_id,
                         stop_id = predTrip.stop.stop_id,
+                        url_safe_stop_id = UrlSafeStopId(predTrip.stop.stop_id),
                         stop_name = predTrip.stop.stop_name,
                         vehicle_id = (predTrip.vehicle == null ? "(not reported)" : predTrip.vehicle.vehicle_id ),
                         sched_dep_dt = predTrip.stop.sch_dep_dt,
@@ -277,6 +278,7 @@ and getdate() between c.start_date and c.end_date
                                 trip_shortname = trip.trip_shortname,
                                 trip_headsign = trip.trip_headsign,
                                 stop_id = stop.stop_id,
+                                url_safe_stop_id = UrlSafeStopId(stop.stop_id),
                                 stop_name = stop.stop_name,
                                 sched_dep_dt = DateFromSchedStopTime(addMe.departure_time_txt),
                                 vehicle_id = null,
@@ -305,7 +307,11 @@ and getdate() between c.start_date and c.end_date
             int min = Convert.ToInt32(parsed[1]);
             int sec = Convert.ToInt32(parsed[2]);
             return DateTime.Today.AddHours(hour).AddMinutes(min).AddSeconds(sec);
+        }
 
+        private string UrlSafeStopId(string stop_id)
+        {
+            return stop_id.Replace("/", "Slash").Replace(" ", "");
         }
     }
 }

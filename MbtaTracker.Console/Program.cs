@@ -68,6 +68,7 @@ namespace MbtaTracker.Console
                 ZipFileName = file,
                 ConnectionString = connStr
             };
+            Trace.TraceInformation("GtfsStaticLoader version " + l.Version);
 
             l.Load();
         }
@@ -82,6 +83,7 @@ namespace MbtaTracker.Console
                 ApiKey = apiKey,
                 ConnectionString = connStr
             };
+            Trace.TraceInformation("MbtaRtLoader version " + l.Version);
 
             l.Load();
             l.ReloadDenormalizedTables();

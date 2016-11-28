@@ -10,22 +10,23 @@ namespace MbtaTracker.DataLoaders
     // *NOT* using Entity Framework here, want to save using BulkLoad
     public class TripsByStation
     {
-/*
-	[trips_by_station_id] [int] IDENTITY(1,1) NOT NULL,
-	[route_id] [nvarchar](255) NOT NULL,
-	[route_name] [nvarchar](255) NOT NULL,
-	[trip_id] [nvarchar](255) NOT NULL,
-	[trip_shortname] [nvarchar](255) NOT NULL,
-	[trip_headsign] [nvarchar](255) NOT NULL,
-	[trip_direction] [int] null,
-	[vehicle_id] [nvarchar](255) null,
-	[stop_id] [nvarchar](255) NOT NULL,
-	[stop_name] [nvarchar](255) NOT NULL,
-	[sched_dep_dt] [datetime] not null,
-	[pred_dt] [datetime] null,
-	[pred_away] [int] null,
- */      
-    #region Member variables
+        /*
+            [trips_by_station_id] [int] IDENTITY(1,1) NOT NULL,
+            [route_id] [nvarchar](255) NOT NULL,
+            [route_name] [nvarchar](255) NOT NULL,
+            [trip_id] [nvarchar](255) NOT NULL,
+            [trip_shortname] [nvarchar](255) NOT NULL,
+            [trip_headsign] [nvarchar](255) NOT NULL,
+            [trip_direction] [int] null,
+            [vehicle_id] [nvarchar](255) null,
+            [stop_id] [nvarchar](255) NOT NULL,
+            [url_safe_stop_id] [nvarchar](255) NOT NULL,
+            [stop_name] [nvarchar](255) NOT NULL,
+            [sched_dep_dt] [datetime] not null,
+            [pred_dt] [datetime] null,
+            [pred_away] [int] null,
+         */
+        #region Member variables
         public int trips_by_station_id;
         public string route_id;
         public string route_name;
@@ -35,6 +36,7 @@ namespace MbtaTracker.DataLoaders
         public int trip_direction;
         public string vehicle_id;
         public string stop_id;
+        public string url_safe_stop_id;
         public string stop_name;
         public DateTime sched_dep_dt;
         public DateTime? pred_dt;
@@ -52,6 +54,7 @@ namespace MbtaTracker.DataLoaders
             r.SetField<int>("trip_direction", trip_direction);
             r.SetField<string>("vehicle_id", vehicle_id);
             r.SetField<string>("stop_id", stop_id);
+            r.SetField<string>("url_safe_stop_id", url_safe_stop_id);
             r.SetField<string>("stop_name", stop_name);
             r.SetField<DateTime>("sched_dep_dt", sched_dep_dt);
             r.SetField<DateTime?>("pred_dt", pred_dt);
@@ -70,6 +73,7 @@ namespace MbtaTracker.DataLoaders
             t.Columns.Add(new DataColumn("trip_direction", typeof(int)));
             t.Columns.Add(new DataColumn("vehicle_id", typeof(string)));
             t.Columns.Add(new DataColumn("stop_id", typeof(string)));
+            t.Columns.Add(new DataColumn("url_safe_stop_id", typeof(string)));
             t.Columns.Add(new DataColumn("stop_name", typeof(string)));
             t.Columns.Add(new DataColumn("sched_dep_dt", typeof(DateTime)));
             t.Columns.Add(new DataColumn("pred_dt", typeof(DateTime)));

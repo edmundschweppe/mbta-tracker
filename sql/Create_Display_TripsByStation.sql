@@ -32,6 +32,7 @@ CREATE TABLE [Display].[TripsByStation](
 	[trip_direction] [int] null,
 	[vehicle_id] [nvarchar](255) null,
 	[stop_id] [nvarchar](255) NOT NULL,
+	[url_safe_stop_id] [nvarchar](255) NOT NULL,
 	[stop_name] [nvarchar](255) NOT NULL,
 	[sched_dep_dt] [datetime] not null,
 	[pred_dt] [datetime] null,
@@ -71,6 +72,17 @@ IF @@ERROR = 0
 ELSE
 BEGIN
 	PRINT 'Error creating [IX_Display_TripsByStation_stop_id] index; aborting';
+	SET NOEXEC ON
+END
+GO
+
+CREATE NONCLUSTERED INDEX [IX_Display_TripsByStation_url_safe_stop_id]
+ON [Display].[TripsByStation] ([url_safe_stop_id]);
+IF @@ERROR = 0
+	PRINT 'Successfully created [IX_Display_TripsByStation_url_safe_stop_id] index';
+ELSE
+BEGIN
+	PRINT 'Error creating [IX_Display_TripsByStation_url_safe_stop_id] index; aborting';
 	SET NOEXEC ON
 END
 GO

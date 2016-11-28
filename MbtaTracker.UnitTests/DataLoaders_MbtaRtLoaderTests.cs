@@ -43,7 +43,9 @@ namespace MbtaTracker.UnitTests
             public Trip R1T1 { get; private set; }
             public Trip R1T2 { get; private set; }
             public Stop S1 { get; private set; }
+            public string S1UrlSafeStopId { get; private set; }
             public Stop S2 { get; private set; }
+            public string S2UrlSafeStopId { get; private set; }
             public Stop_Times R1T1S1 { get; private set; }
             public DateTime R1T1S1_Time_Utc { get; private set; }
             public DateTime R1T1S1_Time_Local { get; private set; }
@@ -122,12 +124,14 @@ namespace MbtaTracker.UnitTests
                     stop_id = "S1",
                     stop_name = "Stop One"
                 };
+                S1UrlSafeStopId = S1.stop_id;
                 S2 = new Stop
                 {
                     download_id = DL1.download_id,
-                    stop_id = "S2",
-                    stop_name = "Stop 2"
+                    stop_id = "S2/2",
+                    stop_name = "Stop 2 / 2"
                 };
+                S2UrlSafeStopId = S2.stop_id.Replace("/", "Slash");
                 DateTime utcDate = UtcNowWithZeroMilliseconds.AddMinutes(-5);
                 string r1t1s1Time_Text = utcDate.ToString("HH:mm:ss");
                 R1T1S1_Time_Utc = utcDate;
@@ -283,6 +287,7 @@ namespace MbtaTracker.UnitTests
             Assert.AreEqual(eb.R1T1.direction_id, dt.Rows[0]["trip_direction"], "checking row 0 trip_direction");
             Assert.AreEqual(eb.PT1V1.vehicle_id, dt.Rows[0]["vehicle_id"], "checking row 0 vehicle_id");
             Assert.AreEqual(eb.S2.stop_id, dt.Rows[0]["stop_id"], "checking row 0 stop_id");
+            Assert.AreEqual(eb.S2UrlSafeStopId, dt.Rows[0]["url_safe_stop_id"], "checking row 0 url_safe_stop_id");
             Assert.AreEqual(eb.S2.stop_name, dt.Rows[0]["stop_name"], "checking row 0 stop_name");
             Assert.AreEqual(eb.R1T1S2_Time_Utc, dt.Rows[0]["sched_dep_dt"], "checking row 0 sched_dep_dt");
             Assert.AreEqual(eb.R1T1S2_Time_Utc, dt.Rows[0]["pred_dt"], "checking row 0 pred_dt");
@@ -340,6 +345,7 @@ namespace MbtaTracker.UnitTests
             Assert.AreEqual(eb.R1T1.direction_id, dt.Rows[0]["trip_direction"], "checking row 0 trip_direction");
             Assert.AreEqual(eb.PT1V1.vehicle_id, dt.Rows[0]["vehicle_id"], "checking row 0 vehicle_id");
             Assert.AreEqual(eb.S2.stop_id, dt.Rows[0]["stop_id"], "checking row 0 stop_id");
+            Assert.AreEqual(eb.S2UrlSafeStopId, dt.Rows[0]["url_safe_stop_id"], "checking row 0 url_safe_stop_id");
             Assert.AreEqual(eb.S2.stop_name, dt.Rows[0]["stop_name"], "checking row 0 stop_name");
             Assert.AreEqual(eb.R1T1S2_Time_Utc, dt.Rows[0]["sched_dep_dt"], "checking row 0 sched_dep_dt");
             Assert.AreEqual(eb.R1T1S2_Time_Utc, dt.Rows[0]["pred_dt"], "checking row 0 pred_dt");
@@ -352,6 +358,7 @@ namespace MbtaTracker.UnitTests
             Assert.AreEqual(eb.R1T2.direction_id, dt.Rows[1]["trip_direction"], "checking row 1 trip_direction");
             Assert.AreEqual(DBNull.Value, dt.Rows[1]["vehicle_id"], "checking row 1 vehicle_id");
             Assert.AreEqual(eb.S1.stop_id, dt.Rows[1]["stop_id"], "checking row 1 stop_id");
+            Assert.AreEqual(eb.S1UrlSafeStopId, dt.Rows[1]["url_safe_stop_id"], "checking row 1 url_safe_stop_id");
             Assert.AreEqual(eb.S1.stop_name, dt.Rows[1]["stop_name"], "checking row 1 stop_name");
             Assert.AreEqual(eb.R1T2S1_Time_Utc, dt.Rows[1]["sched_dep_dt"], "checking row 1 sched_dep_dt");
             Assert.AreEqual(DBNull.Value, dt.Rows[1]["pred_dt"], "checking row 1 pred_dt");
@@ -362,6 +369,7 @@ namespace MbtaTracker.UnitTests
             Assert.AreEqual(eb.R1T2.direction_id, dt.Rows[2]["trip_direction"], "checking row 2 trip_direction");
             Assert.AreEqual(DBNull.Value, dt.Rows[2]["vehicle_id"], "checking row 2 vehicle_id");
             Assert.AreEqual(eb.S2.stop_id, dt.Rows[2]["stop_id"], "checking row 2 stop_id");
+            Assert.AreEqual(eb.S2UrlSafeStopId, dt.Rows[2]["url_safe_stop_id"], "checking row 2 url_safe_stop_id");
             Assert.AreEqual(eb.S2.stop_name, dt.Rows[2]["stop_name"], "checking row 2 stop_name");
             Assert.AreEqual(eb.R1T2S2_Time_Utc, dt.Rows[2]["sched_dep_dt"], "checking row 2 sched_dep_dt");
             Assert.AreEqual(DBNull.Value, dt.Rows[2]["pred_dt"], "checking row 2 pred_dt");
