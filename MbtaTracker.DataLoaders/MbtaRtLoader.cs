@@ -280,7 +280,7 @@ and getdate() between c.start_date and c.end_date
                                 stop_id = stop.stop_id,
                                 url_safe_stop_id = UrlSafeStopId(stop.stop_id),
                                 stop_name = stop.stop_name,
-                                sched_dep_dt = DateFromSchedStopTime(addMe.departure_time_txt),
+                                sched_dep_dt = DateFromSchedStopTime(addMe.departure_time_txt).ToUniversalTime(),
                                 vehicle_id = null,
                                 pred_dt = null,
                                 pred_away = null
@@ -300,16 +300,38 @@ and getdate() between c.start_date and c.end_date
             this.BulkHelper.BulkLoadData(ConnectionString, "Display.TripsByStation", dt);
         }
 
-        private DateTime DateFromSchedStopTime(string stopTimeText)
+        /// <summary>
+        /// Today's date, at the specified time, in local time
+        /// </summary>
+        /// <param name="stopTimeText">String to convert, in hh:mm:ss format</param>
+        /// <returns>The specified DateTime</returns>
+        /// <remarks>If the hours specified are 24 or greater, returns tomorrow at (hh-24:mm:ss)</remarks>
+        public static DateTime DateFromSchedStopTime(string stopTimeText)
         {
             var parsed = stopTimeText.Split(':');
             int hour = Convert.ToInt32(parsed[0]);
             int min = Convert.ToInt32(parsed[1]);
             int sec = Convert.ToInt32(parsed[2]);
-            return DateTime.Today.AddHours(hour).AddMinutes(min).AddSeconds(sec);
+            DateTime schedDay = DateTime.Today;
+            if (hour >= 24)
+            {
+                hour -= 24;
+                schedDay = schedDay.AddDays(1);
+            }
+            int year = schedDay.Year;
+            int month = schedDay.Month;
+            int day = schedDay.Day;
+            return new DateTime(year, month, day, hour, min, sec, DateTimeKind.Local);
         }
 
-        private string UrlSafeStopId(string stop_id)
+        /// <summary>
+        /// Transforms the stop ID into an equivalent that is safe for use in MVC URLs
+        /// </summary>
+        /// <param name="stop_id"></param>
+        /// <returns>The stop_id, with all spaces removed and any "/" converted to "Slash"</returns>
+        /// <remarks>We need this because ASP.NET MVC routing gets confused by embedded slashes,
+        /// and the MBTA uses things like "Littleton / Rte 495' as stop_ids.</remarks>
+        public static string UrlSafeStopId(string stop_id)
         {
             return stop_id.Replace("/", "Slash").Replace(" ", "");
         }

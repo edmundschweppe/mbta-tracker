@@ -132,10 +132,10 @@ namespace MbtaTracker.UnitTests
                     stop_name = "Stop 2 / 2"
                 };
                 S2UrlSafeStopId = S2.stop_id.Replace("/", "Slash");
-                DateTime utcDate = UtcNowWithZeroMilliseconds.AddMinutes(-5);
-                string r1t1s1Time_Text = utcDate.ToString("HH:mm:ss");
-                R1T1S1_Time_Utc = utcDate;
-                R1T1S1_Time_Local = utcDate.ToLocalTime();
+                DateTime localTime = LocalNowWithZeroMilliseconds.AddMinutes(-5);
+                string r1t1s1Time_Text = localTime.ToString("HH:mm:ss");
+                R1T1S1_Time_Utc = localTime.ToUniversalTime();
+                R1T1S1_Time_Local = localTime;
                 R1T1S1= new Stop_Times
                 {
                     download_id = DL1.download_id,
@@ -145,10 +145,10 @@ namespace MbtaTracker.UnitTests
                     arrival_time_txt = r1t1s1Time_Text,
                     departure_time_txt = r1t1s1Time_Text
                 };
-                utcDate = UtcNowWithZeroMilliseconds.AddMinutes(-10);
-                string r1t1s2Time_Text = utcDate.ToString("HH:mm:ss");
-                R1T1S2_Time_Utc = utcDate;
-                R1T1S2_Time_Local = utcDate.ToLocalTime();
+                localTime = LocalNowWithZeroMilliseconds.AddMinutes(-10);
+                string r1t1s2Time_Text = localTime.ToString("HH:mm:ss");
+                R1T1S2_Time_Utc = localTime.ToUniversalTime();
+                R1T1S2_Time_Local = localTime;
                 R1T1S2 = new Stop_Times
                 {
                     download_id = DL1.download_id,
@@ -158,10 +158,10 @@ namespace MbtaTracker.UnitTests
                     arrival_time_txt = r1t1s2Time_Text,
                     departure_time_txt = r1t1s2Time_Text
                 };
-                utcDate = UtcNowWithZeroMilliseconds.AddHours(1);
-                string r1t2s1Time_Text = utcDate.ToString("HH:mm:ss");
-                R1T2S1_Time_Utc = utcDate;
-                R1T2S1_Time_Local = utcDate.ToLocalTime();
+                localTime = LocalNowWithZeroMilliseconds.AddHours(1);
+                string r1t2s1Time_Text = localTime.ToString("HH:mm:ss");
+                R1T2S1_Time_Utc = localTime.ToUniversalTime();
+                R1T2S1_Time_Local = localTime;
                 R1T2S1 = new Stop_Times
                 {
                     download_id = DL1.download_id,
@@ -171,10 +171,10 @@ namespace MbtaTracker.UnitTests
                     arrival_time_txt = r1t2s1Time_Text,
                     departure_time_txt = r1t2s1Time_Text
                 };
-                utcDate =  UtcNowWithZeroMilliseconds.AddMinutes(10);
-                string r1t2s2Time_Text = utcDate.ToString("HH:mm:ss");
-                R1T2S2_Time_Utc = utcDate;
-                R1T2S2_Time_Local = utcDate.ToLocalTime();
+                localTime =  LocalNowWithZeroMilliseconds.AddMinutes(10);
+                string r1t2s2Time_Text = localTime.ToString("HH:mm:ss");
+                R1T2S2_Time_Utc = localTime.ToUniversalTime();
+                R1T2S2_Time_Local = localTime;
                 R1T2S2 = new Stop_Times
                 {
                     download_id = DL1.download_id,
@@ -216,7 +216,7 @@ namespace MbtaTracker.UnitTests
             }
 
             /// <summary>
-            /// DateTime.Now, but with .Millisecond set to zero
+            /// UTC DateTime.Now, but with .Millisecond set to zero
             /// </summary>
             public DateTime UtcNowWithZeroMilliseconds
             {
@@ -232,6 +232,23 @@ namespace MbtaTracker.UnitTests
                         DateTimeKind.Utc);
                 }
             }
+            /// <summary>
+            /// Local DateTime.Now, but with .Millisecond set to zero
+            /// </summary>
+            public DateTime LocalNowWithZeroMilliseconds
+            {
+                get
+                {
+                    return new DateTime(
+                        DateTime.Now.Year,
+                        DateTime.Now.Month,
+                        DateTime.Now.Day,
+                        DateTime.Now.Hour,
+                        DateTime.Now.Minute,
+                        DateTime.Now.Second,
+                        DateTimeKind.Local);
+                }
+            }
         }
         #endregion Test support classes
 
@@ -239,6 +256,7 @@ namespace MbtaTracker.UnitTests
         #endregion Member variables
 
         #region Tests
+        #region ReloadDenormalizedTables tests
         [TestMethod]
         public void ReloadDenormalizedTables_OneScheduledTrip_OnePrediction()
         {
@@ -375,6 +393,70 @@ namespace MbtaTracker.UnitTests
             Assert.AreEqual(DBNull.Value, dt.Rows[2]["pred_dt"], "checking row 2 pred_dt");
             Assert.AreEqual(DBNull.Value, dt.Rows[2]["pred_away"], "checking row 2 pred_away");
         }
+        #endregion ReloadDenormalizedTables tests
+
+        #region DateFromSchedStopTime tests
+        [TestMethod]
+        public void DateFromSchedStopTime_Midnight()
+        {
+            string schedDateTxt = "00:00:00";
+            DateTime expected = DateTime.SpecifyKind(DateTime.Today, DateTimeKind.Local);
+            DateTime actual = MbtaRtLoader.DateFromSchedStopTime(schedDateTxt);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void DateFromSchedStopTime_ThreeThirtyThreePeeEm()
+        {
+            string schedDateTxt = "15:33:33";
+            DateTime expected = DateTime.SpecifyKind(DateTime.Today, DateTimeKind.Local)
+                .AddHours(15).AddMinutes(33).AddSeconds(33);
+            DateTime actual = MbtaRtLoader.DateFromSchedStopTime(schedDateTxt);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void DateFromSchedStopTime_TomorrowMidnight()
+        {
+            string schedDateTxt = "24:00:00";
+            DateTime expected = DateTime.SpecifyKind(DateTime.Today, DateTimeKind.Local).AddDays(1);
+            DateTime actual = MbtaRtLoader.DateFromSchedStopTime(schedDateTxt);
+            Assert.AreEqual(expected, actual);
+        }
+
+        #endregion DateFromSchedStopTime tests
+    
+        #region UrlSafeStopId tests
+        [TestMethod]
+        public void UrlSafeStopId_NoFunnyCharacters()
+        {
+            string stopId = "Belmont";
+            string expected = stopId;
+            string actual = MbtaRtLoader.UrlSafeStopId(stopId);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void UrlSafeStopId_Blanks()
+        {
+            string stopId = "North Station";
+            string expected = "NorthStation";
+            string actual = MbtaRtLoader.UrlSafeStopId(stopId);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void UrlSafeStopId_SlashesAndBlanks()
+        {
+            string stopId = "Littleton / Rte 495";
+            string expected = "LittletonSlashRte495";
+            string actual = MbtaRtLoader.UrlSafeStopId(stopId);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        #endregion UrlSafeStopId tests
+
         #endregion Tests
     }
 }
