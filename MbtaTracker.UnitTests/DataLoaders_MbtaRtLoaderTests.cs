@@ -395,37 +395,48 @@ namespace MbtaTracker.UnitTests
         }
         #endregion ReloadDenormalizedTables tests
 
-        #region DateFromSchedStopTime tests
+        #region UtcDateFromScheduledStopTime tests
         [TestMethod]
-        public void DateFromSchedStopTime_Midnight()
+        public void UtcDateFromScheduledStopTime_Midnight()
         {
             string schedDateTxt = "00:00:00";
-            DateTime expected = DateTime.SpecifyKind(DateTime.Today, DateTimeKind.Local);
-            DateTime actual = MbtaRtLoader.DateFromSchedStopTime(schedDateTxt);
+            DateTime expected = MbtaLocalMidnightUtc;
+            DateTime actual = MbtaRtLoader.UtcDateFromScheduledStopTime(schedDateTxt);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void DateFromSchedStopTime_ThreeThirtyThreePeeEm()
+        public void UtcDateFromScheduledStopTime_ThreeThirtyThreePeeEm()
         {
             string schedDateTxt = "15:33:33";
-            DateTime expected = DateTime.SpecifyKind(DateTime.Today, DateTimeKind.Local)
+            DateTime expected = MbtaLocalMidnightUtc
                 .AddHours(15).AddMinutes(33).AddSeconds(33);
-            DateTime actual = MbtaRtLoader.DateFromSchedStopTime(schedDateTxt);
+            DateTime actual = MbtaRtLoader.UtcDateFromScheduledStopTime(schedDateTxt);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void DateFromSchedStopTime_TomorrowMidnight()
+        public void UtcDateFromScheduledStopTime_TomorrowMidnight()
         {
             string schedDateTxt = "24:00:00";
-            DateTime expected = DateTime.SpecifyKind(DateTime.Today, DateTimeKind.Local).AddDays(1);
-            DateTime actual = MbtaRtLoader.DateFromSchedStopTime(schedDateTxt);
+            DateTime expected = MbtaLocalMidnightUtc.AddDays(1);
+            DateTime actual = MbtaRtLoader.UtcDateFromScheduledStopTime(schedDateTxt);
             Assert.AreEqual(expected, actual);
         }
 
-        #endregion DateFromSchedStopTime tests
-    
+        private DateTime MbtaLocalMidnightUtc
+        {
+            get
+            {
+                return TimeZoneInfo.ConvertTimeBySystemTimeZoneId(
+                    DateTime.Today,
+                    "Eastern Standard Time",
+                    TimeZoneInfo.Utc.Id);
+            }
+        }
+
+        #endregion UtcDateFromScheduledStopTime tests
+
         #region UrlSafeStopId tests
         [TestMethod]
         public void UrlSafeStopId_NoFunnyCharacters()

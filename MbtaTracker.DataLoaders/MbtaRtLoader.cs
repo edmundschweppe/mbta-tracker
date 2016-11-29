@@ -251,12 +251,12 @@ and getdate() between c.start_date and c.end_date
                         var schedStopTrips = currentSched.Stop_Times
                             .Where(st => st.stop_id == s.stop_id
                                     && tripIdsByDirection[s.direction_id].Contains(st.trip_id)
-                                    && DateFromSchedStopTime(st.departure_time_txt) > DateTime.Now)
-                            .OrderBy(st => DateFromSchedStopTime(st.departure_time_txt))
+                                    && UtcDateFromScheduledStopTime(st.departure_time_txt) > DateTime.UtcNow)
+                            .OrderBy(st => UtcDateFromScheduledStopTime(st.departure_time_txt))
                             .ToList();
                         var stopTripsToAdd = schedStopTrips.Where((st, index) => 
                             (index == 0) 
-                            || (DateFromSchedStopTime(st.departure_time_txt) <= DateTime.Now.AddHours(1)))
+                            || (UtcDateFromScheduledStopTime(st.departure_time_txt) <= DateTime.UtcNow.AddHours(1)))
                             .ToList();
                         foreach(var addMe in stopTripsToAdd)
                         {
@@ -280,7 +280,7 @@ and getdate() between c.start_date and c.end_date
                                 stop_id = stop.stop_id,
                                 url_safe_stop_id = UrlSafeStopId(stop.stop_id),
                                 stop_name = stop.stop_name,
-                                sched_dep_dt = DateFromSchedStopTime(addMe.departure_time_txt).ToUniversalTime(),
+                                sched_dep_dt = UtcDateFromScheduledStopTime(addMe.departure_time_txt),
                                 vehicle_id = null,
                                 pred_dt = null,
                                 pred_away = null
@@ -300,13 +300,23 @@ and getdate() between c.start_date and c.end_date
             this.BulkHelper.BulkLoadData(ConnectionString, "Display.TripsByStation", dt);
         }
 
+        // Future TODO: read the timezone from the agency.txt file,
+        // convert from "TZ" database timezone name to .NET TimeZoneInfo TimeZoneId,
+        // and use that to figure out "now" in MBTA-land
+        public static string MbtaTimeZoneId
+        {
+            get
+            {
+                return "Eastern Standard Time";
+            }
+        }
         /// <summary>
-        /// Today's date, at the specified time, in local time
+        /// Today's date, at the specified time, in the same time zone as the MBTA, converted to UTC
         /// </summary>
         /// <param name="stopTimeText">String to convert, in hh:mm:ss format</param>
         /// <returns>The specified DateTime</returns>
         /// <remarks>If the hours specified are 24 or greater, returns tomorrow at (hh-24:mm:ss)</remarks>
-        public static DateTime DateFromSchedStopTime(string stopTimeText)
+        public static DateTime UtcDateFromScheduledStopTime(string stopTimeText)
         {
             var parsed = stopTimeText.Split(':');
             int hour = Convert.ToInt32(parsed[0]);
@@ -321,7 +331,10 @@ and getdate() between c.start_date and c.end_date
             int year = schedDay.Year;
             int month = schedDay.Month;
             int day = schedDay.Day;
-            return new DateTime(year, month, day, hour, min, sec, DateTimeKind.Local);
+            DateTime stopTime = new DateTime(year, month, day, hour, min, sec, DateTimeKind.Unspecified);
+            DateTime utcStopTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(stopTime, MbtaTimeZoneId, TimeZoneInfo.Utc.Id);
+            return utcStopTime;
+            //return new DateTime(year, month, day, hour, min, sec, DateTimeKind.Local);
         }
 
         /// <summary>
