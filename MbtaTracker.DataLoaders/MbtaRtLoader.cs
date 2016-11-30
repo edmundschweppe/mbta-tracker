@@ -159,46 +159,44 @@ and getdate() between c.start_date and c.end_date
                 var currentPred = db.Predictions
                         .OrderByDescending(p => p.prediction_id)
                         .First();
-
-                var predTrips =
-                    from trip in currentPred.PredictionTrips
-                    from stop in trip.PredictionTripStops
-                    from vehicle in trip.PredictionTripVehicles
-                    select new
-                    {
-                        trip,
-                        stop,
-                        vehicle
-                    };
-                Trace.TraceInformation("found {0} predicted trips", predTrips.Count());
-                foreach (var predTrip in predTrips)
+                Trace.TraceInformation("found {0} predicted trips", currentPred.PredictionTrips.Count());
+                foreach (var predTrip in currentPred.PredictionTrips)
                 {
-                    TripsByStation t = new TripsByStation
-                    {
-                        route_id = predTrip.trip.route_id,
-                        trip_id = predTrip.trip.trip_id,
-                        stop_id = predTrip.stop.stop_id,
-                        url_safe_stop_id = UrlSafeStopId(predTrip.stop.stop_id),
-                        stop_name = predTrip.stop.stop_name,
-                        vehicle_id = (predTrip.vehicle == null ? "(not reported)" : predTrip.vehicle.vehicle_id ),
-                        sched_dep_dt = predTrip.stop.sch_dep_dt,
-                        pred_dt = predTrip.stop.pre_dt,
-                        pred_away = predTrip.stop.pre_away
-                    };
-                    t.route_name = currentSched.Routes
-                        .Where(r => r.route_id == t.route_id)
+                    string route_long_name = currentSched.Routes
+                        .Where(r => r.route_id == predTrip.route_id)
                         .First()
                         .route_long_name;
                     var schedTrip = currentSched.Trips
-                        .Where(st => st.trip_id == t.trip_id)
+                        .Where(st => st.trip_id == predTrip.trip_id)
                         .First();
-                    t.trip_direction = (int)schedTrip.direction_id;
-                    t.trip_headsign = schedTrip.trip_headsign;
-                    t.trip_shortname = schedTrip.trip_shortname;
-                    t.AddToDataTable(dt);
+                    string vehicleId = "(not reported)";
+                    if (predTrip.PredictionTripVehicles.Count() > 0)
+                    {
+                        vehicleId = predTrip.PredictionTripVehicles.First().vehicle_id;
+                    }
+                    foreach (var predTripStop in predTrip.PredictionTripStops)
+                    {
+                        TripsByStation t = new TripsByStation
+                        {
+                            route_id = predTrip.route_id,
+                            route_name = route_long_name,
+                            trip_id = predTrip.trip_id,
+                            trip_direction = (int)schedTrip.direction_id,
+                            trip_headsign = schedTrip.trip_headsign,
+                            trip_shortname = schedTrip.trip_shortname,
+                            stop_id = predTripStop.stop_id,
+                            url_safe_stop_id = UrlSafeStopId(predTripStop.stop_id),
+                            stop_name = predTripStop.stop_name,
+                            vehicle_id = vehicleId,
+                            sched_dep_dt = predTripStop.sch_dep_dt,
+                            pred_dt = predTripStop.pre_dt,
+                            pred_away = predTripStop.pre_away
+                        };
+                        t.AddToDataTable(dt);
+                    }
                 }
 
-                Trace.TraceInformation("{0} predicted rows in datatable", dt.Rows.Count);
+                Trace.TraceInformation("{0} prediction rows in datatable", dt.Rows.Count);
 
                 // For any station without predicted trips, add at least one scheduled trip
                 var predStops = dt.AsEnumerable()
