@@ -178,6 +178,7 @@ and getdate() between c.start_date and c.end_date
                     {
                         TripsByStation t = new TripsByStation
                         {
+                            prediction_timestamp = currentPred.prediction_time,
                             route_id = predTrip.route_id,
                             route_name = route_long_name,
                             trip_id = predTrip.trip_id,
@@ -269,6 +270,7 @@ and getdate() between c.start_date and c.end_date
                                 .First();
                             TripsByStation ts = new TripsByStation
                             {
+                                prediction_timestamp = currentPred.prediction_time,
                                 route_id = route.route_id,
                                 route_name = route.route_long_name,
                                 trip_id = trip.trip_id,

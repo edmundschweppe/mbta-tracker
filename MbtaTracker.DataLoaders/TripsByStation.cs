@@ -28,6 +28,7 @@ namespace MbtaTracker.DataLoaders
          */
         #region Member variables
         public int trips_by_station_id;
+        public DateTime prediction_timestamp;
         public string route_id;
         public string route_name;
         public string trip_id;
@@ -46,6 +47,7 @@ namespace MbtaTracker.DataLoaders
         public void AddToDataTable(DataTable dt)
         {
             DataRow r = dt.NewRow();
+            r.SetField<DateTime>("prediction_timestamp", prediction_timestamp);
             r.SetField<string>("route_id", route_id);
             r.SetField<string>("route_name", route_name);
             r.SetField<string>("trip_id", trip_id);
@@ -65,6 +67,7 @@ namespace MbtaTracker.DataLoaders
         public static DataTable CreateDataTable()
         {
             DataTable t = new DataTable();
+            t.Columns.Add(new DataColumn("prediction_timestamp", typeof(DateTime)));
             t.Columns.Add(new DataColumn("route_id", typeof(string)));
             t.Columns.Add(new DataColumn("route_name", typeof(string)));
             t.Columns.Add(new DataColumn("trip_id", typeof(string)));

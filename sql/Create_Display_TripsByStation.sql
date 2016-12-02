@@ -24,6 +24,7 @@ END;
 
 CREATE TABLE [Display].[TripsByStation](
 	[trips_by_station_id] [int] IDENTITY(1,1) NOT NULL,
+	[prediction_timestamp] [datetime] NOT NULL,
 	[route_id] [nvarchar](255) NOT NULL,
 	[route_name] [nvarchar](255) NOT NULL,
 	[trip_id] [nvarchar](255) NOT NULL,
