@@ -112,8 +112,10 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\MbtaTrackerWebApiControllerBase.cs" />
     <Compile Include="Controllers\StationController.cs" />
-    <Compile Include="Controllers\StationsController.cs" />
+    <Compile Include="Controllers\AllStationsController.cs" />
+    <Compile Include="Controllers\StationsByRouteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

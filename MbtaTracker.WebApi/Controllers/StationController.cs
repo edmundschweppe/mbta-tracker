@@ -8,25 +8,8 @@ using System.Web.Http;
 
 namespace MbtaTracker.WebApi.Controllers
 {
-    public class StationController : ApiController
+    public class StationController : MbtaTrackerWebApiControllerBase
     {
-        private IMbtaTrackerDb _trackerDb = null;
-        public IMbtaTrackerDb TrackerDb
-        {
-            get
-            {
-                if (_trackerDb == null)
-                {
-                    return new MbtaTrackerDb();
-                }
-                return _trackerDb;
-            }
-            set
-            {
-                _trackerDb = value;
-            }
-        }
-
         public StationItem GetById(string urlSafeStopId)
         {
             StationItem result = new StationItem
@@ -61,7 +44,7 @@ namespace MbtaTracker.WebApi.Controllers
                     trains.Add(new StationTrainItem
                     {
                         Train = trip.trip_shortname,
-                        Direction = (trip.trip_direction == 0 ? "Inbound" : "Outbound"),
+                        Direction = StationTrainItem.DirectionFromInt(trip.trip_direction),
                         Destination = trip.trip_headsign,
                         ControlCar = trip.vehicle_id,
                         Scheduled = trip.sched_dep_dt,

@@ -62,9 +62,9 @@ namespace MbtaTracker.UnitTests
                 .ToUniversalTime();
             string stationName = "Station One";
             string urlSafeStopId = "StationOneId";
-            string trainOneTrain = "401";
-            string trainOneDirection = "Outbound";
-            string trainOneDestination = "Route One End";
+            string trainOneTrain = "402";
+            string trainOneDirection = "Inbound";
+            string trainOneDestination = "Route One Start";
             DateTime trainOneScheduledTime = predictionTimeStamp.AddHours(5);
 
 
@@ -150,7 +150,7 @@ namespace MbtaTracker.UnitTests
                 stop_name = stationName,
                 url_safe_stop_id = urlSafeStopId,
                 trip_shortname = trainOneTrain,
-                trip_direction = 1,
+                trip_direction = 0,
                 trip_headsign = trainOneDestination,
                 sched_dep_dt = trainOneScheduledTime,
                 pred_dt = trainOnePredictedTime,
@@ -225,7 +225,7 @@ namespace MbtaTracker.UnitTests
                 stop_name = stationOneName,
                 url_safe_stop_id = urlSafeStopIdOne,
                 trip_shortname = "401",
-                trip_direction = 1,
+                trip_direction = 0,
                 trip_headsign = "Route One End",
                 sched_dep_dt = predictionTimeStamp.AddMinutes(20),
                 pred_dt = predictionTimeStamp.AddMinutes(20),
@@ -237,7 +237,7 @@ namespace MbtaTracker.UnitTests
                 stop_name = stationOneName,
                 url_safe_stop_id = urlSafeStopIdOne,
                 trip_shortname = "403",
-                trip_direction = 1,
+                trip_direction = 0,
                 trip_headsign = "Route One End",
                 sched_dep_dt = predictionTimeStamp.AddMinutes(50),
                 pred_dt = predictionTimeStamp.AddMinutes(51),
@@ -249,7 +249,7 @@ namespace MbtaTracker.UnitTests
                 stop_name = stationTwoName,
                 url_safe_stop_id = urlSafeStopIdTwo,
                 trip_shortname = "401",
-                trip_direction = 1,
+                trip_direction = 0,
                 trip_headsign = "Route One End",
                 sched_dep_dt = predictionTimeStamp.AddMinutes(25),
                 pred_dt = predictionTimeStamp.AddMinutes(25),
@@ -261,7 +261,7 @@ namespace MbtaTracker.UnitTests
                 stop_name = stationTwoName,
                 url_safe_stop_id = urlSafeStopIdTwo,
                 trip_shortname = "403",
-                trip_direction = 1,
+                trip_direction = 0,
                 trip_headsign = "Route One End",
                 sched_dep_dt = predictionTimeStamp.AddMinutes(55),
                 pred_dt = predictionTimeStamp.AddMinutes(55),

@@ -92,7 +92,8 @@
     <Compile Include="TestMbtaTrackerDb.cs" />
     <Compile Include="WebApiTestMbtaTrackerDb.cs" />
     <Compile Include="WebApi_StationControllerTests.cs" />
-    <Compile Include="WebApi_StationsControllerTests.cs" />
+    <Compile Include="WebApi_AllStationsControllerTests.cs" />
+    <Compile Include="WebApi_StationsByRouteControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
