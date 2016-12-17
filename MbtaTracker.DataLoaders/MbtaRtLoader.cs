@@ -89,7 +89,7 @@ namespace MbtaTracker.DataLoaders
             p.LoadFromJson();
 
             Trace.TraceInformation("saving to database");
-            using (var db = new MbtaTrackerDb(ConnectionString))
+            using (var db = this.TrackerDb)
             {
                 db.Predictions.Add(p);
                 db.SaveChanges();
@@ -112,7 +112,7 @@ and getdate() between c.start_date and c.end_date
             //{
             //    routes = db.Routes.Select(r => r.route_id).ToArray();
             //}
-            using (var db = new MbtaTrackerDb(connStr))
+            using (var db = this.TrackerDb)
             {
                 int dlId = db.Feed_Info.Where(fi => fi.feed_start_date <= DateTime.Today && DateTime.Today <= fi.feed_end_date)
                     .OrderByDescending(fi => fi.download_id)
